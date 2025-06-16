@@ -3,5 +3,14 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  font-family: "Poppins", sans-serif;
 
 }
+
+.grid-global {
+  width: 100%;
+  max-width: 116.25rem;
+  margin: 0 auto;
+  padding: 0px 1.875rem;
+}
+

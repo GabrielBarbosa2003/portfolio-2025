@@ -1,8 +1,14 @@
+import NavBar from "./Components/NavBar"
+import Home from "./Pages/Home"
 
 function App() {
 
   return (
-   <h1>Ola</h1>
+   <>
+   <NavBar/>
+   <Home/>
+   
+   </>
   )
 }
 

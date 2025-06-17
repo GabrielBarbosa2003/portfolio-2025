@@ -5,7 +5,7 @@ export default function Home() {
 
         <>
             <div className='webgl'>
-                <Scene/>
+                <Scene />
             </div>
             <section className='container-home'>
                 <div className='grid-global'>
@@ -22,6 +22,14 @@ export default function Home() {
                         <h1>Creative Developer</h1>
                     </div>
 
+
+
+                </div>
+
+                <div className='bottom-home'>
+                    <p>I am a front-end developer / Creative developer <br></br>
+                        and I love creating creative websites.
+                    </p>
                 </div>
 
 

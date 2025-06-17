@@ -6,7 +6,7 @@ export default function Scene() {
     return (
         <Canvas>
             <Torus/>
-            <directionalLight intensity={2} position={[0, 2, 3]} color={"blue"} />
+            <directionalLight intensity={10} position={[0, 2, 3]} color={"blue"} />
             <Environment preset="city" />
         </Canvas>
     )

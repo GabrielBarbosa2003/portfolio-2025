@@ -11,4 +11,11 @@
     display: flex;
     list-style: none;
     gap: 30px;
+    overflow: hidden;
+    height: 3vh;
+    cursor: pointer;
+}
+
+.home-creative{
+    cursor: pointer;
 }

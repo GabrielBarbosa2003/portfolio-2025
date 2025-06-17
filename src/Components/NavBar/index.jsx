@@ -8,18 +8,23 @@ export default function NavBar() {
     const liRefs = useRef([])
     const charsRefs = useRef([])
 
+    const creativeText = useRef(null)
+    const textSplit = useRef()
+
     useEffect(() => {
         liRefs.current.forEach((el, i) => {
             const split = new SplitType(el, { types: "chars" })
             charsRefs.current[i] = split.chars
         })
 
+        let splitTextNav = new SplitType(creativeText.current, { types: "chars" })
+        textSplit.current = splitTextNav.chars
     })
 
     function menuMouseEnter(index) {
 
         gsap.to(charsRefs.current[index], {
-            yPercent: -90,
+            yPercent: -100,
             ease: "power2.inOut",
             stagger: 0.02
         })
@@ -34,13 +39,35 @@ export default function NavBar() {
         })
     }
 
+    function changeNameNavBarEnter() {
+        gsap.to(textSplit.current, {
+            yPercent: -100,
+            ease: "power2.inOut",
+            stagger: 0.005
+        })
+    }
+
+       function changeNameNavBarLeave() {
+        gsap.to(textSplit.current, {
+            yPercent: 0,
+            ease: "power2.inOut",
+            stagger: 0.005
+        })
+    }
+
 
     return (
         <div className="grid-global">
             <div className="navbar">
-                <div className="home-creative">
-                    <p>
+                <div className="home-creative"
+                    
+                    onMouseEnter={() => changeNameNavBarEnter()}
+                    onMouseLeave={() => changeNameNavBarLeave()}
+                >
+                    <p ref={creativeText}>
                         @Creative Developer
+                        <br></br>
+                        @Gabriel Barbosa
                     </p>
                 </div>
 

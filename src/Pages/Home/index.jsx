@@ -1,7 +1,46 @@
+import { useEffect, useRef, useState } from 'react'
+import { gsap } from "gsap";
 import Scene from '../../Components/Scene'
 import './home.css'
 import MyServices from './HomeComponents/MyServices'
+import { useGSAP } from '@gsap/react';
 export default function Home() {
+    const [creative, setCreative] = useState(true)
+    const text = useRef(null)
+
+    function changeText() {
+
+        if (creative === true) {
+            setCreative(false)
+        } else {
+            setCreative(true)
+        }
+
+    }
+
+    function animeteChangeText() {
+        const tl = gsap.timeline()
+        tl.to(text.current, {
+            yPercent: 100,
+            ease: "power1.in",
+            onComplete: (() => changeText())
+        })
+        tl.to(text.current, {
+            yPercent: 0,
+            ease: "power1.in",
+
+        })
+
+    }
+
+    setTimeout(() => {
+        animeteChangeText()
+    }, 3000)
+
+
+
+
+
     return (
 
         <>
@@ -20,7 +59,18 @@ export default function Home() {
                         </h2>
                     </div>
                     <div className='creative-home'>
-                        <h1>Creative Developer</h1>
+                        <div className='front-criative'>
+                            {creative === true ?
+                                (<h1 ref={text}>Creative</h1>)
+                                :
+                                (<h1 className='front' ref={text}>Frontend</h1>)
+                            }
+
+
+                        </div>
+                        <div>
+                            <h1>Developer</h1>
+                        </div>
                     </div>
 
 
@@ -34,7 +84,7 @@ export default function Home() {
                 </div>
 
             </section>
-            <MyServices/>
+            <MyServices />
         </>
 
 

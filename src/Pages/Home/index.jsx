@@ -1,5 +1,6 @@
 import Scene from '../../Components/Scene'
 import './home.css'
+import MyServices from './HomeComponents/MyServices'
 export default function Home() {
     return (
 
@@ -32,9 +33,8 @@ export default function Home() {
                     </p>
                 </div>
 
-
-
             </section>
+            <MyServices/>
         </>
 
 

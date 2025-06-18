@@ -85,6 +85,12 @@ export default function Home() {
 
             </section>
             <MyServices />
+
+            <section className='teste'>
+                <div className='grid-global'>
+                    <h1>testeeee</h1>
+                </div>
+            </section>
         </>
 
 

@@ -8,6 +8,7 @@ export default function MyServices() {
   gsap.registerPlugin(useGSAP, ScrollTrigger, CustomEase);
 
   const containerPinRef = useRef()
+  const pinContainerRef = useRef()
 
   const cardsRef = useRef([])
 
@@ -21,7 +22,7 @@ export default function MyServices() {
       trigger: containerPinRef.current,
       start: 'top top',
       end: 'bottom bottom',
-      pin: containerPinRef.current,
+      pin: pinContainerRef.current,
       pinSpacing: false,
       scrub: true,
       markers: true
@@ -76,18 +77,22 @@ export default function MyServices() {
   return (
     <section className="services-container" ref={containerPinRef}>
       <div className="grid-global">
-        <div className='title-services'>
-          <h1>[My main services]</h1>
-        </div>
-        <div className='container-cards'>
-          {cards.map((name, index) => (
-            <div className="card" key={index} ref={((el) => cardsRef.current[index] = el)}>
-              <p>{name}</p>
-              <p>{name}</p>
-            </div>
-          ))}
+        <div className='pin-container' ref={pinContainerRef}>
 
 
+          <div className='title-services'>
+            <h1>[My main services]</h1>
+          </div>
+          <div className='container-cards'>
+            {cards.map((name, index) => (
+              <div className="card" key={index} ref={((el) => cardsRef.current[index] = el)}>
+                <p>{name}</p>
+                <p>{name}</p>
+              </div>
+            ))}
+
+
+          </div>
         </div>
 
       </div>

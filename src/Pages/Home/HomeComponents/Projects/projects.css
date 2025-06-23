@@ -1,0 +1,28 @@
+.projects-container{
+    background-color: var(--color-black-background);
+    height: 100vh;
+    padding-top: 100px;
+}
+
+.projects-container .title-projects{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects-container h1{
+    color: white;
+    font-size: 86px;
+}
+
+.sub-text{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.sub-text p{
+    color: white;
+}

@@ -4,6 +4,7 @@ import Scene from '../../Components/Scene'
 import './home.css'
 import MyServices from './HomeComponents/MyServices'
 import { useGSAP } from '@gsap/react';
+import Projects from './HomeComponents/Projects';
 export default function Home() {
     const [creative, setCreative] = useState(true)
     const text = useRef(null)
@@ -85,12 +86,9 @@ export default function Home() {
 
             </section>
             <MyServices />
+            <Projects/>
 
-            <section className='teste'>
-                <div className='grid-global'>
-                    <h1>testeeee</h1>
-                </div>
-            </section>
+        
         </>
 
 

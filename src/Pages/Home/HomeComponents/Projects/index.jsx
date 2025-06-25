@@ -8,7 +8,28 @@ export default function Projects() {
                     <h1>Projects</h1>
                     <div className='sub-text'>
                         <p>Here we have some of my <br></br>
-                            personal and professional projects.</p>
+                            personal & professional projects.</p>
+                    </div>
+                </div>
+
+                <div className='projects-section'>
+                    <div className='project'>
+
+                    </div>
+                    <div className='project'>
+
+                    </div>
+                    <div className='project'>
+
+                    </div>
+                    <div className='project'>
+
+                    </div>
+                     <div className='project'>
+
+                    </div>
+                    <div className='project'>
+
                     </div>
                 </div>
 

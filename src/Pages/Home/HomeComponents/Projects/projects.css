@@ -1,6 +1,6 @@
 .projects-container{
     background-color: var(--color-black-background);
-    height: 100vh;
+    height: 100%;
     padding-top: 100px;
 }
 
@@ -26,3 +26,26 @@
 .sub-text p{
     color: white;
 }
+
+.projects-section{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    height: 100%;
+    grid-template-rows: auto;
+    row-gap: 50px;
+    column-gap: 50px;
+    justify-content: space-around;
+    align-content: space-between;
+    margin-top: 6.25rem;
+}
+
+.project{
+    border: 1px gray solid;
+    width: 100%;
+    height: 31.25rem;
+    border-radius: 0.625rem;
+}
+
+
+

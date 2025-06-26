@@ -40,12 +40,46 @@
     margin-top: 6.25rem;
 }
 
+
 .project{
-    border: 1px gray solid;
     width: 100%;
     height: 31.25rem;
-    border-radius: 0.625rem;
+    border: 0.5px gray solid;
+    border-radius: 2rem;
 }
 
+.image-container-back{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    position: relative;
+    
+    flex-direction: column;
+}
+.image-container-back p{
+    color: white;
+}
+.image-container-back img{
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 2rem;
+}
 
+.video-container-back{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 15%;
+    opacity: 0;
+}
+
+.video-container-back img{
+    width: 100%;
+    max-width: 40vw;
+    height: 40vh;
+}
 

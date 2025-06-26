@@ -46,7 +46,7 @@ export default function Home() {
 
         <>
             <div className='webgl'>
-                <Scene />
+                {/* <Scene /> */}
             </div>
             <section className='container-home'>
                 <div className='grid-global'>

@@ -1,25 +1,41 @@
+import React, { useState } from 'react'
 import './projects.css'
 import cottonBottom from '../../../../assets/projects-img/cotton-bottom.png'
 import cottonHome from '../../../../assets/projects-img/cotton-home.png'
+import cottonVideo from '../../../../assets/projects-videos/cotton-video.mp4'
 import { gsap } from "gsap";
 import { useRef } from 'react';
+import ReactPlayer from 'react-player'
 
 
 export default function Projects() {
     const videoRef = useRef()
+    const [isPlaying, setIsPlaying] = useState(false)
+    console.log(isPlaying)
 
-    function showVideo(){
+    function showVideo() {
+        setIsPlaying(true)
         gsap.to(videoRef.current, {
             opacity: 1,
-            ease: "power1.in",
+            ease: "power1.in",            
         })
 
+
+
+
+
     }
-    function hiddeVideo(){
-         gsap.to(videoRef.current, {
+    function hiddeVideo() {
+        gsap.to(videoRef.current, {
             opacity: 0,
             ease: "power1.in",
+            onComplete: () => setIsPlaying(false)
+
         })
+
+
+
+
     }
 
 
@@ -38,15 +54,23 @@ export default function Projects() {
                 <div className='projects-section'>
                     <div className='project'>
 
-                        <div className='image-container-back' 
-                        onMouseEnter={() => showVideo()}
-                        onMouseLeave={() => hiddeVideo()} 
-                        
+                        <div className='image-container-back'
+                            onMouseEnter={() => showVideo()}
+                            onMouseLeave={() => hiddeVideo()}
+
                         >
                             <p>Cotton Films</p>
                             <img src={cottonBottom} alt='image project' />
                             <div className='video-container-back' ref={videoRef}>
-                                <img src={cottonHome} alt='image project' />
+                                <ReactPlayer
+                                    className="react-player"
+                                    url={cottonVideo}
+                                    playing={isPlaying}
+                                    controls={false}
+                                    muted={true}
+                                    loop={true}
+                                    width="100%"
+                                />
                             </div>
                         </div>
                     </div>

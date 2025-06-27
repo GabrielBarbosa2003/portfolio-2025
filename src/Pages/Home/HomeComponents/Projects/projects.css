@@ -77,9 +77,12 @@
     opacity: 0;
 }
 
-.video-container-back img{
+.video-container-back .react-player{
     width: 100%;
     max-width: 40vw;
     height: 40vh;
+}
+.react-player {
+  border-radius: 10rem;
 }
 

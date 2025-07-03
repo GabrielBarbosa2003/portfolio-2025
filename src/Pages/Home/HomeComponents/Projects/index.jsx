@@ -11,11 +11,12 @@ import ReactPlayer from 'react-player'
 
 export default function Projects() {
     const videoRef = useRef()
+    const techsRef = useRef()
     const [isPlaying, setIsPlaying] = useState(false)
 
     function showVideo() {
         setIsPlaying(true)
-        gsap.to(videoRef.current, {
+        gsap.to([videoRef.current, techsRef.current], {
             opacity: 1,
             ease: "power1.in",
         })
@@ -26,7 +27,7 @@ export default function Projects() {
 
     }
     function hiddeVideo() {
-        gsap.to(videoRef.current, {
+        gsap.to([videoRef.current, techsRef.current], {
             opacity: 0,
             ease: "power1.in",
             onComplete: () => setIsPlaying(false)
@@ -76,8 +77,13 @@ export default function Projects() {
                                     width="100%"
                                 />
                             </div>
+                            <div className='techs' ref={techsRef}>
+                                <p>(React, GSAP, Development)</p>
+                            </div>
                         </div>
+
                     </div>
+
                     <div className='project'>
 
                     </div>

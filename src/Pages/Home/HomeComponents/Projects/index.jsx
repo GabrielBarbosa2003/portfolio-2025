@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './projects.css'
-import cottonBottom from '../../../../assets/projects-img/cotton-bottom.png'
-import cottonHome from '../../../../assets/projects-img/cotton-home.png'
+import cottonBackImg from '../../../../assets/projects-img/cotton-img.jpg'
+import revelatioBackImg from '../../../../assets/projects-img/revelatio-img.png'
 import cottonVideo from '../../../../assets/projects-videos/cotton-video.mp4'
 import teste from '../../../../assets/projects-videos/video port.mp4'
 
@@ -17,8 +17,8 @@ export default function Projects() {
     const [playingIndex, setPlayingIndex] = useState(null);
 
     const projects = [
-        {id: 1, name:"Cotton Films", year:"2024", backImage: cottonBottom , url: cottonVideo , techs: "(React, GSAP, Development)"},
-        {id: 2, name:"Cotton Films", year:"2024", backImage: cottonBottom , url: teste , techs: "(React, GSAP, Development)"}
+        {id: 1, name:"Cotton Films", year:"2024", backImage: cottonBackImg , url: cottonVideo , techs: "(React, GSAP, Development)"},
+        {id: 2, name:"Revelatio Studio", year:"2025", backImage: revelatioBackImg , url: teste , techs: "(React, GSAP, Development)"}
     ]
 
     function showVideo(index) {

@@ -10,27 +10,33 @@ import ReactPlayer from 'react-player'
 
 
 export default function Projects() {
-    const videoRef = useRef()
-    const techsRef = useRef()
-    const [isPlaying, setIsPlaying] = useState(false)
+    const videoRef = useRef([])
+    const techsRef = useRef([])
+    const [playingIndex, setPlayingIndex] = useState(null);
 
-    function showVideo() {
-        setIsPlaying(true)
-        gsap.to([videoRef.current, techsRef.current], {
+    const projects = [
+        {id: 1, name:"Cotton Films", year:"2024", backImage: cottonBottom , url: cottonVideo , techs: "(React, GSAP, Development)"},
+        {id: 2, name:"Cotton Films", year:"2024", backImage: cottonBottom , url: cottonVideo , techs: "(React, GSAP, Development)"}
+    ]
+
+    function showVideo(index) {
+        setPlayingIndex(index);
+        gsap.to([videoRef.current[index], techsRef.current[index]], {
             opacity: 1,
             ease: "power1.in",
         })
+        console.log(videoRef.current)
 
 
 
 
 
     }
-    function hiddeVideo() {
-        gsap.to([videoRef.current, techsRef.current], {
+    function hiddeVideo(index) {
+        gsap.to([videoRef.current[index], techsRef.current[index]], {
             opacity: 0,
             ease: "power1.in",
-            onComplete: () => setIsPlaying(false)
+            onComplete: () => setPlayingIndex(null)
 
         })
 
@@ -53,46 +59,41 @@ export default function Projects() {
                 </div>
 
                 <div className='projects-section'>
-                    <div className='project'
-                        onMouseEnter={() => showVideo()}
-                        onMouseLeave={() => hiddeVideo()}>
+                    
+                    {projects.map((project, index) => (
+                        <div className='project'
+                        onMouseEnter={() => showVideo(index)}
+                        onMouseLeave={() => hiddeVideo(index)}
+                        key={project.id}>
 
                         <div className='image-container-back'>
                             <div className='header-project'>
                                 <div className='name-project'>
                                     <img src={arrow} alt='arrow' />
-                                    <p>Cotton Films</p>
+                                    <p>{project.name}</p>
                                 </div>
-                                <p>2024</p>
+                                <p>{project.year}</p>
                             </div>
-                            <img src={cottonBottom} alt='image project' />
-                            <div className='video-container-back' ref={videoRef}>
+                            <img src={project.backImage} alt='image project' />
+                            <div className='video-container-back' ref={el => videoRef.current[index] = el}>
                                 <ReactPlayer
                                     className="react-player"
-                                    url={cottonVideo}
-                                    playing={isPlaying}
+                                    url={project.url}
+                                    playing={playingIndex === index}
                                     controls={false}
                                     muted={true}
                                     loop={true}
                                     width="100%"
                                 />
                             </div>
-                            <div className='techs' ref={techsRef}>
-                                <p>(React, GSAP, Development)</p>
+                            <div className='techs' ref={el => techsRef.current[index] = el}>
+                                <p>{project.techs}</p>
                             </div>
                         </div>
 
                     </div>
+                    ))}
 
-                    <div className='project'>
-
-                    </div>
-                    <div className='project'>
-
-                    </div>
-                    <div className='project'>
-
-                    </div>
                 </div>
 
             </div>

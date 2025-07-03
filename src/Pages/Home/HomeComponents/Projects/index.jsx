@@ -3,6 +3,8 @@ import './projects.css'
 import cottonBottom from '../../../../assets/projects-img/cotton-bottom.png'
 import cottonHome from '../../../../assets/projects-img/cotton-home.png'
 import cottonVideo from '../../../../assets/projects-videos/cotton-video.mp4'
+import teste from '../../../../assets/projects-videos/video port.mp4'
+
 import arrow from '../../../../assets/icon-arrow.png'
 import { gsap } from "gsap";
 import { useRef } from 'react';
@@ -16,7 +18,7 @@ export default function Projects() {
 
     const projects = [
         {id: 1, name:"Cotton Films", year:"2024", backImage: cottonBottom , url: cottonVideo , techs: "(React, GSAP, Development)"},
-        {id: 2, name:"Cotton Films", year:"2024", backImage: cottonBottom , url: cottonVideo , techs: "(React, GSAP, Development)"}
+        {id: 2, name:"Cotton Films", year:"2024", backImage: cottonBottom , url: teste , techs: "(React, GSAP, Development)"}
     ]
 
     function showVideo(index) {
@@ -36,8 +38,9 @@ export default function Projects() {
         gsap.to([videoRef.current[index], techsRef.current[index]], {
             opacity: 0,
             ease: "power1.in",
-            onComplete: () => setPlayingIndex(null)
-
+               onComplete: () => {
+            setPlayingIndex(prev => (prev === index ? null : prev));
+        }
         })
 
 

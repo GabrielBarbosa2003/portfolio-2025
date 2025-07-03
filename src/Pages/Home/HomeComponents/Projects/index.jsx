@@ -3,6 +3,7 @@ import './projects.css'
 import cottonBottom from '../../../../assets/projects-img/cotton-bottom.png'
 import cottonHome from '../../../../assets/projects-img/cotton-home.png'
 import cottonVideo from '../../../../assets/projects-videos/cotton-video.mp4'
+import arrow from '../../../../assets/icon-arrow.png'
 import { gsap } from "gsap";
 import { useRef } from 'react';
 import ReactPlayer from 'react-player'
@@ -11,13 +12,12 @@ import ReactPlayer from 'react-player'
 export default function Projects() {
     const videoRef = useRef()
     const [isPlaying, setIsPlaying] = useState(false)
-    console.log(isPlaying)
 
     function showVideo() {
         setIsPlaying(true)
         gsap.to(videoRef.current, {
             opacity: 1,
-            ease: "power1.in",            
+            ease: "power1.in",
         })
 
 
@@ -52,14 +52,18 @@ export default function Projects() {
                 </div>
 
                 <div className='projects-section'>
-                    <div className='project'>
+                    <div className='project'
+                        onMouseEnter={() => showVideo()}
+                        onMouseLeave={() => hiddeVideo()}>
 
-                        <div className='image-container-back'
-                            onMouseEnter={() => showVideo()}
-                            onMouseLeave={() => hiddeVideo()}
-
-                        >
-                            <p>Cotton Films</p>
+                        <div className='image-container-back'>
+                            <div className='header-project'>
+                                <div className='name-project'>
+                                    <img src={arrow} alt='arrow' />
+                                    <p>Cotton Films</p>
+                                </div>
+                                <p>2024</p>
+                            </div>
                             <img src={cottonBottom} alt='image project' />
                             <div className='video-container-back' ref={videoRef}>
                                 <ReactPlayer
@@ -73,12 +77,6 @@ export default function Projects() {
                                 />
                             </div>
                         </div>
-                    </div>
-                    <div className='project'>
-
-                    </div>
-                    <div className='project'>
-
                     </div>
                     <div className='project'>
 

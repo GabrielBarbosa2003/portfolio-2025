@@ -3,7 +3,7 @@ import './projects.css'
 import cottonBackImg from '../../../../assets/projects-img/cotton-img.jpg'
 import revelatioBackImg from '../../../../assets/projects-img/revelatio-img.png'
 import cottonVideo from '../../../../assets/projects-videos/cotton-video.mp4'
-import teste from '../../../../assets/projects-videos/video port.mp4'
+import revelatioVideo from '../../../../assets/projects-videos/revelatio-video.mp4'
 
 import arrow from '../../../../assets/icon-arrow.png'
 import { gsap } from "gsap";
@@ -18,7 +18,7 @@ export default function Projects() {
 
     const projects = [
         {id: 1, name:"Cotton Films", year:"2024", backImage: cottonBackImg , url: cottonVideo , techs: "(React, GSAP, Development)"},
-        {id: 2, name:"Revelatio Studio", year:"2025", backImage: revelatioBackImg , url: teste , techs: "(React, GSAP, Development)"}
+        {id: 2, name:"Revelatio Studio", year:"2025", backImage: revelatioBackImg , url: revelatioVideo , techs: "(React, GSAP, Development)"}
     ]
 
     function showVideo(index) {
@@ -27,8 +27,6 @@ export default function Projects() {
             opacity: 1,
             ease: "power1.in",
         })
-        console.log(videoRef.current)
-
 
 
 

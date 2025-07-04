@@ -61,7 +61,7 @@ export default function Projects() {
         <section className='projects-container'>
             <div className='grid-global'>
                 <div className='title-projects'>
-                    <h1>Projects</h1>
+                    <h1>[Works & Projects]</h1>
                     <div className='sub-text'>
                         <p>Here we have some of my <br></br>
                             personal & professional projects.</p>

@@ -1,9 +1,15 @@
 import React, { useState } from 'react'
 import './projects.css'
-import cottonBackImg from '../../../../assets/projects-img/cotton-img.jpg'
-import revelatioBackImg from '../../../../assets/projects-img/revelatio-img.png'
+import cottonImg from '../../../../assets/projects-img/cotton-img.jpg'
 import cottonVideo from '../../../../assets/projects-videos/cotton-video.mp4'
+import revelatioImg from '../../../../assets/projects-img/revelatio-img.png'
 import revelatioVideo from '../../../../assets/projects-videos/revelatio-video.mp4'
+import galaxyImg from '../../../../assets/projects-img/galaxy-img.png'
+import galaxyVideo from '../../../../assets/projects-videos/galaxy-video.mp4'
+import galleryImg from '../../../../assets/projects-img/gallery-img.png'
+import galleryVideo from '../../../../assets/projects-videos/gallery-video.mp4'
+
+
 
 import arrow from '../../../../assets/icon-arrow.png'
 import { gsap } from "gsap";
@@ -17,8 +23,11 @@ export default function Projects() {
     const [playingIndex, setPlayingIndex] = useState(null);
 
     const projects = [
-        {id: 1, name:"Cotton Films", year:"2024", backImage: cottonBackImg , url: cottonVideo , techs: "(React, GSAP, Development)"},
-        {id: 2, name:"Revelatio Studio", year:"2025", backImage: revelatioBackImg , url: revelatioVideo , techs: "(React, GSAP, Development)"}
+        {id: 1, name:"Cotton Films", year:"2024", backImage: cottonImg , url: cottonVideo , techs: "(React, GSAP, Development)"},
+        {id: 2, name:"Revelatio Studio", year:"2025", backImage: revelatioImg , url: revelatioVideo , techs: "(React, GSAP, Development)"},
+        {id: 3, name:"Galaxy 3D", year:"2025", backImage: galaxyImg , url: galaxyVideo , techs: "(React, Three.js, Study)"},
+        {id: 4, name:"Gallery 3D", year:"2024", backImage: galleryImg , url: galleryVideo , techs: "(React, Gsap, Study)"}
+
     ]
 
     function showVideo(index) {

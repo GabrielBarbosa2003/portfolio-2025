@@ -5,6 +5,7 @@ import './home.css'
 import MyServices from './HomeComponents/MyServices'
 import { useGSAP } from '@gsap/react';
 import Projects from './HomeComponents/Projects';
+import Footer from './HomeComponents/Footer/Footer';
 export default function Home() {
     const [creative, setCreative] = useState(true)
     const text = useRef(null)
@@ -87,6 +88,7 @@ export default function Home() {
             </section>
             <MyServices />
             <Projects/>
+            <Footer/>
 
         
         </>

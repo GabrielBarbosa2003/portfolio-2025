@@ -1,0 +1,85 @@
+.footer-home-container {
+    background-color: var(--color-black-background);
+    width: 100%;
+    height: 100vh;
+    padding-top: 120px;
+    color: white;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.lets-talk h1 {
+    font-size: 10vw;
+    line-height: 1;
+    opacity: 0.9;
+}
+
+.contact-container {
+    border: 0.5px gray solid;
+    border-radius: 2rem;
+    padding: 20px;
+}
+.contact-container p{
+    font-size: 20px;
+    opacity: 0.6;
+}
+.email-container{
+    margin-top: 20px;
+}
+.email{
+    display: flex;
+    align-items: start;
+    gap: 5px;
+    margin-top: 5px;
+}
+.email p{
+    font-size: 20px;
+}
+.email img{
+    width: 18px;
+    height: 18px;
+    transform: rotate(180deg);
+    transform: rotateX(180deg);
+
+}
+
+.email p{
+    opacity: 0.9;
+    
+}
+.email a{
+    text-decoration: none;
+    color: white;
+}
+.social{
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    gap: 30px;
+}
+.each-social{
+     width: 100%;
+    max-width: 50px;
+    height: 50px;
+}
+
+
+.logo {
+    border: 0.5px gray solid;
+    border-radius: 2rem;
+    width: 100%;
+    max-width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img{
+    width: 100%;
+    max-width: 25px;
+    
+}

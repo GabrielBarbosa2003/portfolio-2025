@@ -84,14 +84,14 @@ export default function MyServices() {
             <h1>[My main services]</h1>
           </div>
           <div className='container-cards'>
-          <div className='all-cards'>
+            <div className='all-cards'>
               {cards.map((name, index) => (
-              <div className="card" key={index} ref={((el) => cardsRef.current[index] = el)}>
-                <p>{name}</p>
-                <p>{name}</p>
-              </div>
-            ))}
-          </div>
+                <div className="card" key={index} ref={((el) => cardsRef.current[index] = el)}>
+                  <p>{name}</p>
+                  <p>{name}</p>
+                </div>
+              ))}
+            </div>
 
             <div className='text-services'>
               <p>I create projects that have <span>life</span>, <span>body</span> and <span>heart</span>.</p>

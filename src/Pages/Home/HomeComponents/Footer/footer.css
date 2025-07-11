@@ -1,26 +1,25 @@
 .footer-home-container {
     background-color: var(--color-black-background);
     width: 100%;
-    height: 100vh;
-    padding-top: 250px;
+    padding-top: 200px;
     color: white;
 }
 
-.head-text{
+.head-text-bottom{
     margin-left: 111px;
 }
 
-.head-text h1, span{
+.head-text-bottom h1, .head-text-bottom span{
     font-size: 40px;
     opacity: 60%;
     font-weight: 500;
 }
-.head-text span{
+.head-text-bottom span{
     opacity: 100% !important;
 }
 
 .contacts-bottom{
-    margin-top: 310px;
+    margin-top: 120px;
 }
 .contacts-bottom h2{
     font-size: 24px;
@@ -67,6 +66,40 @@
     width: 20px;
     height: 20px;
 }
+.available{
+    margin-top: 70px;
+}
+
+.available p{
+    font-size: 16px;
+    font-weight: 400;
+}
+.work-available{
+    display: flex;
+    align-items: center;
+}
+.work-available img{
+   width: 18px;
+   height: 18px;
+}
+.work-available p{
+    color: #808080;
+}
+.lets-talk {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-top: 50px;
+    padding-bottom: 20px;
+}
+
+.lets-talk .logo{
+    width: 100%;
+    height: auto;
+}
+
 
 
 

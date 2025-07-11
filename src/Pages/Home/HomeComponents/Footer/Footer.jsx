@@ -1,13 +1,17 @@
 import './footer.css'
 import arrowEmail from '../../../../assets/bottom/arrow-email.svg'
 import arrowSocial from '../../../../assets/bottom/arrow-social.svg'
+import dot from '../../../../assets/bottom/dot.png'
+import letsTalk from '../../../../assets/bottom/lets-talk.svg'
+
+
 
 
 export default function Footer() {
     return (
         <section className='footer-home-container'>
             <div className='grid-global'>
-                <div className='head-text'>
+                <div className='head-text-bottom'>
                     <h1>Dont be shy, if you have any project in mind,</h1>
                     <span>Get in touch</span>
                 </div>
@@ -66,6 +70,16 @@ export default function Footer() {
                         </div>
 
                     </div>
+                </div>
+                <div className='available'>
+                    <div className='work-available'>
+                        <p>Available for work</p>
+                        <img src={dot} alt='green dot' />
+                    </div>
+                    <p>Freelance, Full-time</p>
+                </div>
+                <div className='lets-talk'>
+                    <img src={letsTalk} alt='lets talk' className='logo'/>
                 </div>
 
             </div>

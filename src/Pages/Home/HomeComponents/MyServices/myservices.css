@@ -50,7 +50,7 @@
     -webkit-backdrop-filter: blur(6px);
 }
 
-.text-services {
+.container-cards .text-services {
     width: 100%;
     position: absolute;
     bottom: 15%;
@@ -58,11 +58,11 @@
     justify-content: end;
 }
 
-.text-services p {
+.container-cards .text-services p {
     color: #808080;
     font-size: 32px;
     
 }
-.text-services p span{
+.container-cards .text-services p span{
     color: white;
 }

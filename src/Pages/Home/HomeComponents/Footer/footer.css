@@ -2,84 +2,72 @@
     background-color: var(--color-black-background);
     width: 100%;
     height: 100vh;
-    padding-top: 120px;
+    padding-top: 250px;
     color: white;
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 50% 50%;
+.head-text{
+    margin-left: 111px;
 }
 
-.lets-talk h1 {
-    font-size: 10vw;
-    line-height: 1;
-    opacity: 0.9;
+.head-text h1, span{
+    font-size: 40px;
+    opacity: 60%;
+    font-weight: 500;
+}
+.head-text span{
+    opacity: 100% !important;
 }
 
-.contact-container {
-    border: 0.5px gray solid;
-    border-radius: 2rem;
-    padding: 20px;
+.contacts-bottom{
+    margin-top: 310px;
 }
-.contact-container p{
-    font-size: 20px;
+.contacts-bottom h2{
+    font-size: 24px;
+    font-weight: 500;
     opacity: 0.6;
 }
-.email-container{
-    margin-top: 20px;
-}
-.email{
+.bottom-email{
     display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.bottom-email img{
+    width: 15px;
+    height: 15px;
+}
+.email .number{
+    margin-left: 25px;
+}
+.contact-socials {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
     align-items: start;
-    gap: 5px;
-    margin-top: 5px;
 }
-.email p{
-    font-size: 20px;
+.contact-socials ul{
+    list-style: none;
 }
-.email img{
-    width: 18px;
-    height: 18px;
-    transform: rotate(180deg);
-    transform: rotateX(180deg);
-
+.contact-socials :nth-child(3){
+    margin-right: 100px;
 }
 
-.email p{
-    opacity: 0.9;
-    
-}
-.email a{
-    text-decoration: none;
-    color: white;
-}
-.social{
-    width: 100%;
-    margin-top: 30px;
+.social-bottom ul{
     display: flex;
-    gap: 30px;
+    flex-direction: column;
+    gap: 8px;
 }
-.each-social{
-     width: 100%;
-    max-width: 50px;
-    height: 50px;
-}
-
-
-.logo {
-    border: 0.5px gray solid;
-    border-radius: 2rem;
-    width: 100%;
-    max-width: 50px;
-    height: 50px;
+.social-bottom li{
     display: flex;
-    justify-content: center;
+    gap: 8px;
     align-items: center;
 }
 
-.logo img{
-    width: 100%;
-    max-width: 25px;
-    
+.social-bottom li img{
+    width: 20px;
+    height: 20px;
 }
+
+
+
+

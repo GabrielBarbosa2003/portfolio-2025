@@ -47,7 +47,7 @@ export default function NavBar() {
         })
     }
 
-       function changeNameNavBarLeave() {
+    function changeNameNavBarLeave() {
         gsap.to(textSplit.current, {
             yPercent: 0,
             ease: "power2.inOut",
@@ -60,14 +60,14 @@ export default function NavBar() {
         <div className="grid-global">
             <div className="navbar">
                 <div className="home-creative"
-                    
+
                     onMouseEnter={() => changeNameNavBarEnter()}
                     onMouseLeave={() => changeNameNavBarLeave()}
                 >
                     <p ref={creativeText}>
-                        @Creative Developer
-                        <br></br>
                         @Gabriel Barbosa
+                        <br></br>
+                        @Creative Developer
                     </p>
                 </div>
 

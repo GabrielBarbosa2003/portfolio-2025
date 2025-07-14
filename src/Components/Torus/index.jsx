@@ -73,7 +73,7 @@ export default function Torus() {
     return (
 
         <group scale={viewport.width / 18}>
-            <mesh ref={torus} rotation={[-1, 10, 0]} position={[0, 0.5, -0.5]}>
+            <mesh ref={torus} rotation={[-1, 10, 0]} position={[0, 0.2, -0.5]}>
                 <torusGeometry args={[2, 0.6, 16, 100]} />
                 <MeshTransmissionMaterial  
                 thickness={0.20}

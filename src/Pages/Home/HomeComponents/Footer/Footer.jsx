@@ -78,6 +78,12 @@ export default function Footer() {
                     </div>
                     <p>Freelance, Full-time</p>
                 </div>
+                <div className='local-rights'>
+                <p>Brazil-São Paulo</p>
+                <p>
+                    © 2025 All rights reserved
+                </p>
+                </div>
                 <div className='lets-talk'>
                     <img src={letsTalk} alt='lets talk' className='logo'/>
                 </div>

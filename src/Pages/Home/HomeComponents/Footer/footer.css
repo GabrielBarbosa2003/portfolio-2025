@@ -85,14 +85,23 @@
 .work-available p{
     color: #808080;
 }
+
+.local-rights{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    color: #808080;
+}
 .lets-talk {
     width: 100%;
     max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: start;
-    margin-top: 50px;
-    padding-bottom: 20px;
+    margin-top: 30px;
+    padding-bottom: 5px;
 }
 
 .lets-talk .logo{

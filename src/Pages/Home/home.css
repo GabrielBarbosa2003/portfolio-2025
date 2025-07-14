@@ -14,7 +14,7 @@
 }
 
 .middle-home h2 {
-    font-size: 64px;
+    font-size: 5vw;
     font-weight: 300;
 }
 
@@ -69,3 +69,49 @@
     font-size: 32px;
     color: #5D5D5D;
 }
+
+/* Responsivo */
+
+@media(max-width: 1400px) {}
+
+@media(max-width: 1366px) {}
+
+@media(max-width: 1280px) {}
+
+@media(max-width: 1200px) {}
+
+@media(max-width: 991px) {}
+
+@media(max-width: 800px) {
+    .container-home {
+        height: 70vh;
+    }
+
+    .creative-home {
+        top: 60%;
+
+    }
+
+    .creative-home h1 {
+        font-size: 9vw;
+
+    }
+
+    .bottom-home p {
+        font-size: 20px;
+    }
+
+}
+
+@media(max-width: 600px) {}
+
+@media(max-width: 480px) {
+    .creative-home{
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        border: 1px red solid;
+    }
+}
+
+@media(max-width: 390px) {}

@@ -1,6 +1,6 @@
 import './canva.css'
 import { createRoot } from 'react-dom/client'
-import { Canvas, useFrame } from '@react-three/fiber'
+import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Environment, MeshTransmissionMaterial, OrbitControls, PerspectiveCamera } from '@react-three/drei'
 import { useControls } from 'leva'
 import { useRef } from 'react'
@@ -62,6 +62,8 @@ export default function Torus() {
 
     })
 
+    const { viewport } = useThree()
+
 
 
 
@@ -70,7 +72,7 @@ export default function Torus() {
 
     return (
 
-        <group>
+        <group scale={viewport.width / 18}>
             <mesh ref={torus} rotation={[-1, 10, 0]} position={[0, 0.5, -0.5]}>
                 <torusGeometry args={[2, 0.6, 16, 100]} />
                 <MeshTransmissionMaterial  

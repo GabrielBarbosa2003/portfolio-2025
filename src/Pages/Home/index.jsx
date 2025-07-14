@@ -6,33 +6,38 @@ import MyServices from './HomeComponents/MyServices'
 import { useGSAP } from '@gsap/react';
 import Projects from './HomeComponents/Projects';
 import Footer from './HomeComponents/Footer/Footer';
+import SplitType from 'split-type'
+
+
 export default function Home() {
     const creativeText = useRef()
 
 
 
+
     function animateTitleHome() {
+        const text = new SplitType(creativeText.current, { types: 'words, chars' })
         const tl = gsap.timeline()
-        tl.to(creativeText.current, {
-            yPercent: -50,
+        tl.to(text.chars, {
+            yPercent: -100,
             ease: "power2.inOut",
-            stagger: 0.005
+            stagger: 0.009
         })
-        tl.to(creativeText.current, {
-            delay:2.5,
+        tl.to(text.chars, {
+            delay: 2.5,
             yPercent: 0,
             ease: "power2.inOut",
-            stagger: 0.005
+            stagger: 0.009
         })
     }
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-        animateTitleHome();
-    }, 5000);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            animateTitleHome();
+        }, 5000);
 
-    return () => clearInterval(interval);
-}, []);
+        return () => clearInterval(interval);
+    }, []);
 
 
 

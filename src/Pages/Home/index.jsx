@@ -46,9 +46,9 @@ export default function Home() {
     return (
 
         <>
-            {/* <div className='webgl'>
+            <div className='webgl-desk'>
                 <Scene />
-            </div> */}
+            </div>
             <section className='container-home'>
                 <div className='grid-global'>
                     <div className='middle-home'>
@@ -60,21 +60,42 @@ export default function Home() {
                             Developer
                         </h2>
                     </div>
-                    <div className='creative-home'>
-                        <div className='front-criative'>
+                    {window.innerWidth > 480 ? (
+                        <div className='creative-home'>
+                            <div className='front-criative'>
 
-                            <h1 ref={creativeText}>
-                                Frontend
-                                <br></br>
-                                Creative
-                            </h1>
+                                <h1 ref={creativeText}>
+                                    Frontend
+                                    <br></br>
+                                    Creative
+                                </h1>
 
+                            </div>
+                            <div>
+                                <h1>Developer</h1>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className='mobile-middle'>
+                            <div className='animate-text-mobile'>
+                                <div className='text-animation-mobile'>
+                                    <h1 ref={creativeText}>
+                                        Frontend
+                                        <br></br>
+                                        Creative
+                                    </h1>
+                                </div>
+                            </div>
+                            <div className='webgl-mobile'>
+                                <Scene />
+                            </div>
+
+                            <div className='dev-mobile'>
+                                <h1>Developer</h1>
+                            </div>
 
                         </div>
-                        <div>
-                            <h1>Developer</h1>
-                        </div>
-                    </div>
+                    )}
 
 
 
@@ -87,9 +108,9 @@ export default function Home() {
                 </div>
 
             </section>
-            {/* <MyServices />
+            <MyServices />
             <Projects />
-            <Footer /> */}
+            <Footer />
 
 
         </>

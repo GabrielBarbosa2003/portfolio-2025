@@ -72,7 +72,8 @@ export default function NavBar() {
                 </div>
 
                 <div className="navbar-links">
-                    <ul className="list-menu">
+                   {window.innerWidth > 480 ? (
+                     <ul className="list-menu">
                         {menuItens.map((item, index) => (
                             <li
                                 key={item}
@@ -87,6 +88,9 @@ export default function NavBar() {
                             </li>
                         ))}
                     </ul>
+                   ) : (
+                    <p>Menu</p>
+                   )}
 
                 </div>
 

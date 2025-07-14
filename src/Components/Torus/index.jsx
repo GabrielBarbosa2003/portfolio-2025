@@ -64,16 +64,13 @@ export default function Torus() {
 
     const { viewport } = useThree()
 
-
-
-
-
+    const torusZ = viewport.width >= 7.5 ? -3 : 5
 
 
     return (
 
         <group scale={viewport.width / 18}>
-            <mesh ref={torus} rotation={[-1, 10, 0]} position={[0, 0.2, -3]}>
+            <mesh ref={torus} rotation={[-1, 10, 0]} position={[0, 0.2, torusZ]}>
                 <torusGeometry args={[2, 0.6, 16, 100]} />
                 <MeshTransmissionMaterial  
                 thickness={0.20}

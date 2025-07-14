@@ -46,9 +46,9 @@ export default function Home() {
     return (
 
         <>
-            {/* <div className='webgl'>
+            <div className='webgl'>
                 <Scene />
-            </div> */}
+            </div>
             <section className='container-home'>
                 <div className='grid-global'>
                     <div className='middle-home'>

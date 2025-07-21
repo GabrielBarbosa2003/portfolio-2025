@@ -1,5 +1,6 @@
 import './about.css'
 import me from '../../assets/myself.png'
+import ICanHelp from './AboutComponents/ICanHelp'
 
 export default function About() {
     return (
@@ -39,6 +40,8 @@ export default function About() {
                 </div>
 
             </div>
+
+            <ICanHelp/>
 
         </section>
     )

@@ -1,9 +1,10 @@
-.projects-container{
+.projects-container {
     background-color: var(--color-black-background);
     height: 100%;
     padding-top: 100px;
 }
-.header-project{
+
+.header-project {
     width: 100%;
     height: 10%;
     display: flex;
@@ -11,18 +12,20 @@
     padding: 0px 30px;
     align-items: center;
 }
-.name-project{
+
+.name-project {
     width: 100%;
     display: flex;
     align-items: center;
     gap: 10px;
 }
-.header-project .name-project img{
+
+.header-project .name-project img {
     width: 14px;
     height: 14px;
 }
 
-.projects-container .title-projects{
+.projects-container .title-projects {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -30,22 +33,23 @@
     align-items: center;
 }
 
-.projects-container h1{
+.projects-container h1 {
     color: white;
     font-size: 32px;
 }
 
-.sub-text{
+.sub-text {
     width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
-.sub-text p{
+
+.sub-text p {
     color: white;
 }
 
-.projects-section{
+.projects-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
@@ -59,7 +63,7 @@
 }
 
 
-.project{
+.project {
     width: 100%;
     height: 31.25rem;
     border: 0.5px gray solid;
@@ -67,26 +71,28 @@
     cursor: pointer;
 }
 
-.image-container-back{
+.image-container-back {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: end;
     position: relative;
-    
+
     flex-direction: column;
 }
-.image-container-back p{
+
+.image-container-back p {
     color: white;
 }
-.image-container-back img{
+
+.image-container-back img {
     width: 100%;
     height: 90%;
     object-fit: cover;
     border-radius: 2rem;
 }
 
-.video-container-back{
+.video-container-back {
     width: 100%;
     height: auto;
     display: flex;
@@ -96,25 +102,72 @@
     opacity: 0;
 }
 
-.video-container-back .react-player{
+.video-container-back .react-player {
     width: 100%;
     max-width: 40vw;
     height: 40vh;
 }
+
 .react-player {
-  border-radius: 10rem;
+    border-radius: 10rem;
 }
 
-.techs{
+.techs {
     width: 100%;
     position: absolute;
     padding: 20px 20px;
     opacity: 0;
-    
+
 }
-.techs p{
+
+.techs p {
     color: #B8B3B3;
     list-style: none;
     font-weight: 500;
 }
 
+/* Responsivo */
+
+@media(max-width: 1400px) {}
+
+@media(max-width: 1366px) {}
+
+@media(max-width: 1280px) {}
+
+@media(max-width: 1200px) {}
+
+@media(max-width: 991px) {}
+
+@media(max-width: 800px) {
+    .projects-section {
+        grid-template-columns: repeat(1, 1fr)
+    }
+
+    .video-container-back .react-player {
+        width: 100%;
+        max-width: 70vw;
+        height: 40vh;
+    }
+    .projects-container h1{
+        font-size: 5vw;
+    }
+    .sub-text p {
+        font-size: 3vw;
+    }
+}
+
+@media(max-width: 600px) {}
+
+@media(max-width: 480px) {
+    .project {
+        height: 27rem;
+    }
+
+    .sub-text {
+        margin-top: 20px;
+    }
+}
+
+@media(max-width: 430px) {}
+
+@media(max-width: 390px) {}

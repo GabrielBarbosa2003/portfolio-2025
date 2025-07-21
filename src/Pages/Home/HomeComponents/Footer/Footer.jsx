@@ -26,48 +26,55 @@ export default function Footer() {
                             <p className='number'>+55 (19)99483-3584</p>
                         </div>
 
-                        <div className='social-bottom'>
-                            <ul>
-                                <li>
-                                    Instagram
-                                    <img src={arrowSocial} alt='arrow' />
 
-                                </li>
-                                <li>
-                                    LinkedIn
-                                    <img src={arrowSocial} alt='arrow' />
+                        <div className='grid-mobile-footer'>
+                            <div className='social-bottom'>
+                                <ul>
+                                    <li>
+                                        Instagram
+                                        <img src={arrowSocial} alt='arrow' />
 
-                                </li>
-                                <li>
-                                    Github
-                                    <img src={arrowSocial} alt='arrow' />
+                                    </li>
+                                    <li>
+                                        LinkedIn
+                                        <img src={arrowSocial} alt='arrow' />
 
-                                </li>
-                            </ul>
+                                    </li>
+                                    <li>
+                                        Github
+                                        <img src={arrowSocial} alt='arrow' />
 
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                            <div className='social-bottom'>
+                                <ul>
+                                    <li>
+                                        Work
+                                        <img src={arrowSocial} alt='arrow' />
+
+                                    </li>
+                                    <li>
+                                        About
+                                        <img src={arrowSocial} alt='arrow' />
+
+                                    </li>
+                                    <li>
+                                        PlayGround
+                                        <img src={arrowSocial} alt='arrow' />
+
+                                    </li>
+
+                                </ul>
+
+                            </div>
                         </div>
 
-                        <div className='social-bottom'>
-                            <ul>
-                                <li>
-                                    Work
-                                    <img src={arrowSocial} alt='arrow' />
 
-                                </li>
-                                <li>
-                                    About
-                                    <img src={arrowSocial} alt='arrow' />
 
-                                </li>
-                                <li>
-                                    PlayGround
-                                    <img src={arrowSocial} alt='arrow' />
 
-                                </li>
-
-                            </ul>
-
-                        </div>
 
                     </div>
                 </div>
@@ -79,13 +86,13 @@ export default function Footer() {
                     <p>Freelance, Full-time</p>
                 </div>
                 <div className='local-rights'>
-                <p>Brazil-São Paulo</p>
-                <p>
-                    © 2025 All rights reserved
-                </p>
+                    <p>Brazil-São Paulo</p>
+                    <p>
+                        © 2025 All rights reserved
+                    </p>
                 </div>
                 <div className='lets-talk'>
-                    <img src={letsTalk} alt='lets talk' className='logo'/>
+                    <img src={letsTalk} alt='lets talk' className='logo' />
                 </div>
 
             </div>

@@ -110,7 +110,7 @@ export default function Home() {
             </section>
             <MyServices />
             <Projects />
-            {/* <Footer /> */}
+            <Footer />
 
 
         </>

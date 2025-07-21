@@ -7,7 +7,7 @@ export default function About() {
         <section className='container-about'>
             <div className='grid-global'>
                 <div className='about-text'>
-                    <p>Creative Developer from Brazil</p>
+                    <p>Creative Developer from Brazil <br></br> working globally</p>
                     <div className='initial-text'>
                         <h1>Between pixels, coffee, and ideas, <br></br>
                             I create interfaces that tell <br></br>

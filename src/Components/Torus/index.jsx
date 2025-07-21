@@ -81,7 +81,7 @@ export default function Torus() {
                 backside={true}
                 />
             </mesh>
-            <CameraRig/>
+           {viewport.width >= 9 ?  <CameraRig/> : <></>}
             {/* <PerspectiveCamera makeDefault fov={75} near={0.1} far={1000} position={[0, 0, 5]}/> */}
         </group>
 

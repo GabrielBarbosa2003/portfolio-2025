@@ -40,9 +40,10 @@ export default function MyServices() {
         scrub: true,
       }
     })
+    console.log(-0.5 * window.innerHeight)
 
     tl.to(cardsRef.current, {
-      yPercent: -90, // Translate by half the element’s height
+      yPercent: -200, // Translate by half the element’s height
       y: -0.5 * window.innerHeight, // Translate by half the screen’s height
       duration: 1,
       stagger: 0.12,
@@ -66,7 +67,7 @@ export default function MyServices() {
   useGSAP(() => {
 
     gsap.set(cardsRef.current, {
-      yPercent: 50,
+      yPercent: 200,
       y: 0.5 * window.innerHeight,
     })
 

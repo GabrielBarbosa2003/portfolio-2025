@@ -108,9 +108,9 @@ export default function Home() {
                 </div>
 
             </section>
-            {/* <MyServices />
+            <MyServices />
             <Projects />
-            <Footer /> */}
+            {/* <Footer /> */}
 
 
         </>

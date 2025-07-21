@@ -1,6 +1,7 @@
 import './about.css'
 import me from '../../assets/myself.png'
 import ICanHelp from './AboutComponents/ICanHelp'
+import Experience from './AboutComponents/Experience'
 
 export default function About() {
     return (
@@ -42,6 +43,7 @@ export default function About() {
             </div>
 
             <ICanHelp/>
+            <Experience/>
 
         </section>
     )

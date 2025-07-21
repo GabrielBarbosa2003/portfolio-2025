@@ -16,7 +16,9 @@
 }
 
 :root{
-  --color-black-background: black
+  --color-black-background: black;
+  --color-gray-1: #525252;
+  --color-gray-2: #D9D9D9 
 }
 
 

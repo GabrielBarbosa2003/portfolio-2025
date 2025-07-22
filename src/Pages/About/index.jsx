@@ -11,10 +11,21 @@ export default function About() {
                 <div className='about-text'>
                     <p>Creative Developer from Brazil <br></br> working globally</p>
                     <div className='initial-text'>
-                        <h1>Between pixels, coffee, and ideas, <br></br>
-                            I create interfaces that tell <br></br>
-                            stories and make people <br></br>
-                            want to stay.</h1>
+                        {window.innerWidth >= 481 ? (
+                            <h1>Between pixels, coffee, and ideas, <br></br>
+                                I create interfaces that tell <br></br>
+                                stories and make people <br></br>
+                                want to stay.</h1>
+
+                        ) : (
+                            <h1>Between pixels, coffee, and ideas,
+                                I create interfaces that tell
+                                stories and make people
+                                want to stay.</h1>
+                        )}
+
+
+
                     </div>
 
                 </div>
@@ -35,7 +46,7 @@ export default function About() {
                             <br></br>
                             E sobre eu ? A... Escrevo código, tomo café e gosto de treinar, já é algo!
                             <br></br>
-                             <br></br>
+                            <br></br>
 
                             Se voce tem alguma ideia, colaboraçoes, ou oportunidade de emprego, nao hesite em entrar em contato.</p>
                     </div>
@@ -43,9 +54,9 @@ export default function About() {
 
             </div>
 
-            <ICanHelp/>
-            <Experience/>
-            <Footer/>
+            <ICanHelp />
+            <Experience />
+            <Footer />
 
         </section>
     )

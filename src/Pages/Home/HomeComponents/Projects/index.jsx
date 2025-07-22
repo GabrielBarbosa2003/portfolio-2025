@@ -85,7 +85,7 @@ export default function Projects() {
                                 <p>{project.year}</p>
                             </div>
                             <img src={project.backImage} alt='image project' />
-                            {/* <div className='video-container-back' ref={el => videoRef.current[index] = el}>
+                            <div className='video-container-back' ref={el => videoRef.current[index] = el}>
                                 <ReactPlayer
                                     className="react-player"
                                     url={project.url}
@@ -95,7 +95,7 @@ export default function Projects() {
                                     loop={true}
                                     width="100%"
                                 />
-                            </div> */}
+                            </div>
                             <div className='techs' ref={el => techsRef.current[index] = el}>
                                 <p>{project.techs}</p>
                             </div>

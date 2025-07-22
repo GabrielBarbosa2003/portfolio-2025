@@ -56,11 +56,13 @@ export default function Footer() {
                                         <img src={arrowSocial} alt='arrow' />
 
                                     </li>
-                                    <li>
+                                   <a href='/about'>
+                                     <li>
                                         About
                                         <img src={arrowSocial} alt='arrow' />
 
                                     </li>
+                                   </a>
                                     <li>
                                         PlayGround
                                         <img src={arrowSocial} alt='arrow' />

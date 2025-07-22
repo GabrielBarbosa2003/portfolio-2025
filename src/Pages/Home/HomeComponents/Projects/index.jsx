@@ -58,7 +58,7 @@ export default function Projects() {
 
 
     return (
-        <section className='projects-container'>
+        <section className='projects-container' id='works'>
             <div className='grid-global'>
                 <div className='title-projects'>
                     <h1>[Works & Projects]</h1>

@@ -1,10 +1,11 @@
 import './navbar.css'
 import { gsap } from "gsap";
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import SplitType from 'split-type'
 export default function NavBar() {
 
-    const menuItens = ["Work", "About", "Contact"]
+    const menuItens = [{text: "Work", link: "#works"}, {text: "About", link: "/about"}, {text: "Contact", link:"#contact"}] 
     const liRefs = useRef([])
     const charsRefs = useRef([])
 
@@ -64,33 +65,37 @@ export default function NavBar() {
                     onMouseEnter={() => changeNameNavBarEnter()}
                     onMouseLeave={() => changeNameNavBarLeave()}
                 >
-                    <p ref={creativeText}>
-                        @Gabriel Barbosa
-                        <br></br>
-                        @Creative Developer
-                    </p>
+                    <Link to={"/"}>
+                        <p ref={creativeText}>
+                            @Gabriel Barbosa
+                            <br></br>
+                            @Creative Developer
+                        </p>
+                    </Link>
                 </div>
 
                 <div className="navbar-links">
-                   {window.innerWidth > 480 ? (
-                     <ul className="list-menu">
-                        {menuItens.map((item, index) => (
-                            <li
-                                key={item}
-                                ref={(el) => (liRefs.current[index] = el)}
-                                onMouseEnter={() => menuMouseEnter(index)}
-                                onMouseLeave={() => menuMouseLeave(index)}
-                            >
-                                {item}
-                                <br></br>
-                                {item}
+                    {window.innerWidth > 480 ? (
+                        <ul className="list-menu">
+                            {menuItens.map((item, index) => (
+                                <li
+                                    key={item}
+                                    ref={(el) => (liRefs.current[index] = el)}
+                                    onMouseEnter={() => menuMouseEnter(index)}
+                                    onMouseLeave={() => menuMouseLeave(index)}
+                                >
+                                    <a href={item.link}>
+                                        {item.text}
+                                        <br></br>
+                                        {item.text}
+                                    </a>
 
-                            </li>
-                        ))}
-                    </ul>
-                   ) : (
-                    <p>Menu</p>
-                   )}
+                                </li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <p>Menu</p>
+                    )}
 
                 </div>
 

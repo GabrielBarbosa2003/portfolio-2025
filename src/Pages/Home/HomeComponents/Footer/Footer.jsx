@@ -9,7 +9,7 @@ import letsTalk from '../../../../assets/bottom/lets-talk.svg'
 
 export default function Footer() {
     return (
-        <section className='footer-home-container'>
+        <section className='footer-home-container' id='contact'>
             <div className='grid-global'>
                 <div className='head-text-bottom'>
                     <h1>Dont be shy, if you have any project in mind,</h1>

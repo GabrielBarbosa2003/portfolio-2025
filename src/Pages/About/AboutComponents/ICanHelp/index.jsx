@@ -1,11 +1,11 @@
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger"; import './icanhelp.css'
+import { useRef } from "react";
 
 export default function ICanHelp() {
     gsap.registerPlugin(useGSAP, ScrollTrigger);
-
-
+    const titleRef = useRef()
 
 
     useGSAP(() => {
@@ -23,12 +23,25 @@ export default function ICanHelp() {
                 onLeaveBack: () => sec.classList.remove("active"),
             })
         })
+
+        gsap.fromTo(titleRef.current,{
+            opacity: 0,
+            xPercent: -10
+        },{
+            opacity:1,
+            xPercent: 0,
+            scrollTrigger:{
+                trigger:titleRef.current
+                
+            }
+
+        })
     })
 
     return (
         <section className='icanhelp-section'>
             <div className='grid-global'>
-                <h1>Eu posso te ajudar com...</h1>
+                <h1 ref={titleRef}>Eu posso te ajudar com...</h1>
 
                 <div className='list-help'>
                     <div className='item-list'>

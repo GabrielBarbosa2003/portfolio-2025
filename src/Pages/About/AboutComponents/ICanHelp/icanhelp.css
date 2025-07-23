@@ -17,7 +17,7 @@
 
 .item-list {
     width: 100%;
-    display: flex;
+    display: flex !important;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px grey solid;
@@ -25,6 +25,7 @@
     padding-top: 100px;
     transition: opacity 1s ease;
 }
+
 .item-list.active{
     opacity: 0.9;
     

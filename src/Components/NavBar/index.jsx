@@ -79,7 +79,7 @@ export default function NavBar() {
                         <ul className="list-menu">
                             {menuItens.map((item, index) => (
                                 <li
-                                    key={item}
+                                    key={index}
                                     ref={(el) => (liRefs.current[index] = el)}
                                     onMouseEnter={() => menuMouseEnter(index)}
                                     onMouseLeave={() => menuMouseLeave(index)}

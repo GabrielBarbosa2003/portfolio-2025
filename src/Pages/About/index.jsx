@@ -14,19 +14,19 @@ export default function About() {
     const imageRef = useRef()
 
     function animateImageAbout(){
-        gsap.fromTo(imageRef.current,{
+        gsap.fromTo([imageRef.current, aboutMeRef.current],{
             opacity: 0,
             yPercent: 20,
-            ease: "power2.inOut",
+            ease: "power1.inOut",
         },{
             opacity: 1,
             yPercent: 0,
-            ease: "power2.inOut",
+            ease: "power1.inOut",
             delay: 0.5
         })
     }
     useGSAP(() => {
-        animateText(titleRef, aboutMeRef)
+        animateText(titleRef)
         animateImageAbout()
     },[])
     return (

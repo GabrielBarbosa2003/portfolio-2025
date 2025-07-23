@@ -24,7 +24,7 @@ export default function ICanHelp() {
             })
         })
 
-        gsap.fromTo(titleRef.current,{
+        gsap.fromTo([titleRef.current],{
             opacity: 0,
             xPercent: -10
         },{
@@ -36,6 +36,8 @@ export default function ICanHelp() {
             }
 
         })
+
+        
     })
 
     return (

@@ -16,15 +16,19 @@ import { gsap } from "gsap";
 import { useRef } from 'react';
 import ReactPlayer from 'react-player'
 import animateText from '../../../../services/animeTexts'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
 export default function Projects() {
+    gsap.registerPlugin(ScrollTrigger, gsap);
+
     const videoRef = useRef([])
     const techsRef = useRef([])
     const [playingIndex, setPlayingIndex] = useState(null);
 
     const titleRef = useRef()
     const textRef = useRef()
+    const projectRef = useRef([])
 
     const projects = [
         { id: 1, name: "Cotton Films", year: "2024", backImage: cottonImg, url: cottonVideo, techs: "(React, GSAP, Development)" },
@@ -59,9 +63,30 @@ export default function Projects() {
 
     }
 
+    function animateProjects() {
+        console.log( projectRef.current)
+
+        projectRef.current.forEach((project) => {
+            gsap.fromTo(project, {
+                yPercent: 10,
+                opacity: 0,
+            }, {
+                yPercent: 0,
+                opacity: 1,
+                ease: "power2.inOut",
+                scrollTrigger: {
+                    trigger: project,
+                    start: "top bottom-=50px",
+                    end: "bottom bottom",
+                }
+            })
+        })
+    }
+
     useEffect(() => {
         animateText(titleRef, textRef)
-    },[])
+        animateProjects()
+    }, [])
 
 
 
@@ -82,7 +107,7 @@ export default function Projects() {
                         <div className='project'
                             onMouseEnter={() => showVideo(index)}
                             onMouseLeave={() => hiddeVideo(index)}
-                            key={project.id}>
+                            key={project.id} ref={el => projectRef.current[index] = el}>
 
                             <div className='image-container-back'>
                                 <div className='header-project'>

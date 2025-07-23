@@ -38,6 +38,7 @@ export default function Footer() {
         })
     }
 
+
     useGSAP(() => {
         animateText(titleRef, contactsRef, availableRef, localRef)
         animateImagesFooter()
@@ -126,7 +127,7 @@ export default function Footer() {
                 <div className='available' ref={availableRef}>
                     <div className='work-available'>
                         <p>Available for work</p>
-                        <img src={dot} alt='green dot' />
+                        <img src={dot} alt='green dot' className='fade-in-out'/>
                     </div>
                     <p>Freelance, Full-time</p>
                 </div>

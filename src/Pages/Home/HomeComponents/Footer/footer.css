@@ -157,6 +157,16 @@
     clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
 }
 
+.fade-in-out {
+    animation: fadeInOut 1.8s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
 /* Responsivo */
 
 @media(max-width: 1400px) {}

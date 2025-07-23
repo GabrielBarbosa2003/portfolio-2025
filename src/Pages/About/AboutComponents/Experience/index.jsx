@@ -1,12 +1,53 @@
+import { useGSAP } from '@gsap/react'
+import { gsap } from "gsap";
 import './experience.css'
+import { useRef } from 'react';
 
 
 export default function Experience() {
+    const titleRef = useRef()
+    const jobsRef = useRef([])
+
+    function animateTextExperience() {
+        gsap.fromTo([titleRef.current], {
+            opacity: 0,
+            xPercent: -10
+        }, {
+            opacity: 1,
+            xPercent: 0,
+            scrollTrigger: {
+                trigger: titleRef.current
+
+            }
+
+        })
+    }
+
+    function animateJobsShow() {
+        gsap.fromTo(jobsRef.current, {
+            opacity: 0,
+            yPercent: 10
+        }, {
+            opacity: 1,
+            yPercent: 0,
+            scrollTrigger: {
+                trigger: jobsRef.current,
+                start: "top bottom-=20%",
+            }
+
+        })
+    }
+
+    useGSAP(() => {
+        animateJobsShow()
+        animateTextExperience()
+    }, [])
+
     return (
         <section className='sec-experience'>
             <div className='grid-global'>
-                <h1>Experience</h1>
-                <div className='experiences-list'>
+                <h1 ref={titleRef}>Experience</h1>
+                <div className='experiences-list' ref={jobsRef}>
 
                     <div className='experience'>
                         <div className='job'>

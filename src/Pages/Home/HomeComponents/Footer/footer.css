@@ -22,13 +22,16 @@
 .contacts-bottom{
     margin-top: 120px;
 }
+.contacts-bottom .word{
+    overflow: hidden;
+}
 .contacts-bottom h2{
     font-size: 24px;
     font-weight: 500;
     opacity: 0.6;
 }
 .bottom-email{
-    display: flex;
+    display: flex !important;
     gap: 10px;
     align-items: center;
 }
@@ -40,7 +43,7 @@
     margin-left: 25px;
 }
 .contact-socials{
-    display: flex;
+    display: flex !important;
     justify-content: space-between;
     margin-top: 35px;
     align-items: start;
@@ -48,17 +51,17 @@
 .contact-socials ul{
     list-style: none;
 }
-.contact-socials :nth-child(3){
+/* .contact-socials :nth-child(3){
     margin-right: 100px;
-}
+} */
 
 .social-bottom ul{
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     gap: 8px;
 }
 .social-bottom li{
-    display: flex;
+    display: flex !important;
     gap: 8px;
     align-items: center;
 }
@@ -76,7 +79,7 @@
     font-weight: 400;
 }
 .work-available{
-    display: flex;
+    display: flex !important;
     align-items: center;
 }
 .work-available img{
@@ -87,9 +90,13 @@
     color: #808080;
 }
 
+.work-available .word, .local-rights .word{
+    overflow: hidden;
+}
+
 .grid-mobile-footer{
-    display: flex;
-    width: 100%;
+    display: flex !important;
+    width: 70%;
     justify-content: space-around;
 }
 

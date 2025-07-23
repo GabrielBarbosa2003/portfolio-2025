@@ -12,9 +12,12 @@ import animateText from '../../../../services/animeTexts'
 
 export default function Footer() {
     const titleRef = useRef()
+    const contactsRef = useRef()
+    const availableRef = useRef() 
+    const localRef = useRef()
 
    useGSAP(() => {
-    animateText(titleRef)
+    animateText(titleRef, contactsRef, availableRef, localRef)
    },[])
 
     return (
@@ -24,9 +27,9 @@ export default function Footer() {
                     <h1>Dont be shy, if you have any project in mind,</h1> <br></br>
                     <p>Get in touch</p>
                 </div>
-                <div className='contacts-bottom'>
+                <div className='contacts-bottom' ref={contactsRef}>
                     <h2>New Projects / Bussines</h2>
-                    <div className='contact-socials'>
+                    <div className='contact-socials' >
                         <div className='email'>
                             <div className='bottom-email'>
                                 <img src={arrowEmail} alt='arrow' />
@@ -41,12 +44,12 @@ export default function Footer() {
                                 <ul>
                                     <li>
                                         Instagram
-                                        <img src={arrowSocial} alt='arrow' />
+                                        <span className='word' ><img src={arrowSocial} alt='arrow' /></span>
 
                                     </li>
                                     <li>
                                         LinkedIn
-                                        <img src={arrowSocial} alt='arrow' />
+                                        <img src={arrowSocial} alt='arrow'/>
 
                                     </li>
                                     <li>
@@ -89,14 +92,14 @@ export default function Footer() {
 
                     </div>
                 </div>
-                <div className='available'>
+                <div className='available' ref={availableRef}>
                     <div className='work-available'>
                         <p>Available for work</p>
                         <img src={dot} alt='green dot' />
                     </div>
                     <p>Freelance, Full-time</p>
                 </div>
-                <div className='local-rights'>
+                <div className='local-rights' ref={localRef}>
                     <p>Brazil-São Paulo</p>
                     <p>
                         © 2025 All rights reserved

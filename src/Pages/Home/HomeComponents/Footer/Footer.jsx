@@ -56,7 +56,7 @@ export default function Footer() {
                         <div className='email'>
                             <div className='bottom-email'>
                                 <img src={arrowEmail} alt='arrow' />
-                                <p>gabrieldecarvalhu@gmail.com</p>
+                                <a href='mailto:gabrieldecarvalhu@gmail.com'><p>gabrieldecarvalhu@gmail.com</p></a>
                             </div>
                             <p className='number'>+55 (19)99483-3584</p>
                         </div>
@@ -65,32 +65,40 @@ export default function Footer() {
                         <div className='grid-mobile-footer'>
                             <div className='social-bottom'>
                                 <ul>
-                                    <li>
+                                   <a href='https://www.instagram.com/gabriellbarbosa/' target='_blank'>
+                                     <li>
                                         Instagram
                                         <img src={arrowSocial} alt='arrow' />
 
                                     </li>
-                                    <li>
+                                   </a>
+                                   <a href='https://www.linkedin.com/in/devgabrielbarbosa/' target='_blank'> 
+                                     <li>
                                         LinkedIn
                                         <img src={arrowSocial} alt='arrow' />
 
                                     </li>
-                                    <li>
+                                   </a>
+                                   <a href='https://github.com/GabrielBarbosa2003' target='_blank'>
+                                     <li>
                                         Github
                                         <img src={arrowSocial} alt='arrow' />
 
                                     </li>
+                                   </a>
                                 </ul>
 
                             </div>
 
                             <div className='social-bottom'>
                                 <ul>
-                                    <li>
+                                  <a href='#works'>
+                                      <li>
                                         Work
                                         <img src={arrowSocial} alt='arrow' />
 
                                     </li>
+                                  </a>
                                     <a href='/about'>
                                         <li>
                                             About

@@ -6,6 +6,7 @@ import letsTalk from '../../../../assets/bottom/lets-talk.svg'
 import { useEffect, useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import animateText from '../../../../services/animeTexts'
+import { gsap } from "gsap";
 
 
 
@@ -13,19 +14,41 @@ import animateText from '../../../../services/animeTexts'
 export default function Footer() {
     const titleRef = useRef()
     const contactsRef = useRef()
-    const availableRef = useRef() 
+    const availableRef = useRef()
     const localRef = useRef()
 
-   useGSAP(() => {
-    animateText(titleRef, contactsRef, availableRef, localRef)
-   },[])
+    function animateImagesFooter() {
+        const images = [...document.querySelectorAll(".footer-home-container img")]
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: images,
+                start: 'top bottom-=50px',
+                end: 'bottom bottom',
+            }
+        })
+
+        tl.fromTo([images], {
+            yPercent: 120,
+            ease: "power2.inOut",
+        }, {
+            yPercent: 0,
+            ease: "power2.inOut",
+            stagger: 0.003
+        })
+    }
+
+    useGSAP(() => {
+        animateText(titleRef, contactsRef, availableRef, localRef)
+        animateImagesFooter()
+    }, [])
 
     return (
-        <section className='footer-home-container' id='contact'>
+        <section className='footer-home-container'>
             <div className='grid-global'>
-                <div className='head-text-bottom' ref={titleRef}>
+                <div className='head-text-bottom' ref={titleRef} id='contact'>
                     <h1>Dont be shy, if you have any project in mind,</h1> <br></br>
-                    <p>Get in touch</p>
+                    <span>Get in touch</span>
                 </div>
                 <div className='contacts-bottom' ref={contactsRef}>
                     <h2>New Projects / Bussines</h2>
@@ -44,12 +67,12 @@ export default function Footer() {
                                 <ul>
                                     <li>
                                         Instagram
-                                        <span className='word' ><img src={arrowSocial} alt='arrow' /></span>
+                                        <img src={arrowSocial} alt='arrow' />
 
                                     </li>
                                     <li>
                                         LinkedIn
-                                        <img src={arrowSocial} alt='arrow'/>
+                                        <img src={arrowSocial} alt='arrow' />
 
                                     </li>
                                     <li>
@@ -68,13 +91,13 @@ export default function Footer() {
                                         <img src={arrowSocial} alt='arrow' />
 
                                     </li>
-                                   <a href='/about'>
-                                     <li>
-                                        About
-                                        <img src={arrowSocial} alt='arrow' />
+                                    <a href='/about'>
+                                        <li>
+                                            About
+                                            <img src={arrowSocial} alt='arrow' />
 
-                                    </li>
-                                   </a>
+                                        </li>
+                                    </a>
                                     <li>
                                         PlayGround
                                         <img src={arrowSocial} alt='arrow' />

@@ -5,102 +5,124 @@
     color: white;
 }
 
-.head-text-bottom{
+.head-text-bottom {
     margin-left: 111px;
-    line-height: 40px;
 }
 
-.head-text-bottom h1, .head-text-bottom p{
+.head-text-bottom h1,
+.head-text-bottom span {
     font-size: 40px;
     opacity: 60%;
     font-weight: 500;
 }
-.head-text-bottom p{
+
+.head-text-bottom span {
     opacity: 100% !important;
 }
 
-.contacts-bottom{
+.contacts-bottom {
     margin-top: 120px;
 }
-.contacts-bottom .word{
-    overflow: hidden;
+
+.contacts-bottom .word {
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
 }
-.contacts-bottom h2{
+
+.contacts-bottom h2 {
     font-size: 24px;
     font-weight: 500;
     opacity: 0.6;
 }
-.bottom-email{
+
+.bottom-email {
     display: flex !important;
     gap: 10px;
     align-items: center;
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
 }
-.bottom-email img{
+
+.bottom-email img {
     width: 15px;
     height: 15px;
+
 }
-.email .number{
+
+.email .number {
     margin-left: 25px;
 }
-.contact-socials{
+
+.contact-socials {
     display: flex !important;
     justify-content: space-between;
     margin-top: 35px;
     align-items: start;
 }
-.contact-socials ul{
+
+.contact-socials ul {
     list-style: none;
 }
+
 /* .contact-socials :nth-child(3){
     margin-right: 100px;
 } */
 
-.social-bottom ul{
+.social-bottom ul {
     display: flex !important;
     flex-direction: column;
     gap: 8px;
 }
-.social-bottom li{
+
+.social-bottom li {
     display: flex !important;
     gap: 8px;
     align-items: center;
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
 }
 
-.social-bottom li img{
+.social-bottom li img {
     width: 20px;
     height: 20px;
+
 }
-.available{
+
+.available {
     margin-top: 70px;
 }
 
-.available p{
+.available p {
     font-size: 16px;
     font-weight: 400;
 }
-.work-available{
+
+.work-available {
     display: flex !important;
     align-items: center;
 }
-.work-available img{
-   width: 18px;
-   height: 18px;
+
+.work-available img {
+    width: 18px;
+    height: 18px;
 }
-.work-available p{
+
+.work-available p {
     color: #808080;
 }
 
-.work-available .word, .local-rights .word{
-    overflow: hidden;
+.work-available .word,
+.local-rights .word,
+.work-available,
+.lets-talk {
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+
 }
 
-.grid-mobile-footer{
+.grid-mobile-footer {
     display: flex !important;
     width: 70%;
     justify-content: space-around;
 }
 
-.local-rights{
+.local-rights {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -108,6 +130,7 @@
     margin-top: 20px;
     color: #808080;
 }
+
 .lets-talk {
     width: 100%;
     max-width: 100%;
@@ -118,13 +141,13 @@
     padding-bottom: 5px;
 }
 
-.lets-talk .logo{
+.lets-talk .logo {
     width: 100%;
     height: auto;
 }
 
-.head-text-bottom .word{
-    overflow: hidden;
+.head-text-bottom .word {
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
 }
 
 /* Responsivo */
@@ -140,54 +163,58 @@
 @media(max-width: 991px) {}
 
 @media(max-width: 800px) {
-    .head-text-bottom{
+    .head-text-bottom {
         margin-left: 0;
     }
-    .head-text-bottom h1, .head-text-bottom span{
+
+    .head-text-bottom h1,
+    .head-text-bottom span {
         font-size: 4vw;
     }
-    .contacts-bottom{
+
+    .contacts-bottom {
         margin-top: 10%;
     }
-    .contact-socials :nth-child(3){
+
+    .contact-socials :nth-child(3) {
         margin-right: 0;
     }
 }
 
 @media(max-width: 600px) {
-    .footer-home-container{
+    .footer-home-container {
         padding-top: 80px;
     }
-    .contact-socials{
+
+    .contact-socials {
         flex-direction: column;
         gap: 40px;
         margin-top: 10px;
     }
-    .grid-mobile-footer{
+
+    .grid-mobile-footer {
         justify-content: space-between;
         font-size: 14px;
     }
+
     .contacts-bottom h2 {
         font-size: 20px;
     }
 }
 
-@media(max-width: 480px) {
-  
-}
+@media(max-width: 480px) {}
 
 @media(max-width: 430px) {
-    .head-text-bottom h1, .head-text-bottom span{
+
+    .head-text-bottom h1,
+    .head-text-bottom span {
         font-size: 4.5vw;
+        line-height: 20px;
     }
-    .local-rights p{
+
+    .local-rights p {
         font-size: 14px;
     }
 }
 
 @media(max-width: 390px) {}
-
-
-
-
-

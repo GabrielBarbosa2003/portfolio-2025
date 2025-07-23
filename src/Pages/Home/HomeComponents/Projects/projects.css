@@ -33,6 +33,10 @@
     align-items: center;
 }
 
+.title-projects .word, .sub-text .word{
+    overflow: hidden;
+}
+
 .projects-container h1 {
     color: white;
     font-size: 32px;

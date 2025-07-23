@@ -74,6 +74,9 @@
     text-align: center;
     padding-bottom: 6.25rem;
 }
+.bottom-home .word{
+    overflow: hidden;
+}
 
 .bottom-home p {
     font-size: 32px;

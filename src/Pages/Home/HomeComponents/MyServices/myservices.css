@@ -12,6 +12,9 @@
     align-items: center;
     padding-top: 50px;
 }
+.title-services .word, .text-services .word{
+    overflow: hidden;
+}
 
 .title-services h1 {
     color: white;

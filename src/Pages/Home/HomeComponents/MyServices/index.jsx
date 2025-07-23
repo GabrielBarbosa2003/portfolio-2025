@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from '@gsap/react';
 import { CustomEase } from "gsap/CustomEase";
+import animateText from '../../../../services/animeTexts';
 export default function MyServices() {
   gsap.registerPlugin(useGSAP, ScrollTrigger, CustomEase);
 
@@ -11,6 +12,8 @@ export default function MyServices() {
   const pinContainerRef = useRef()
 
   const cardsRef = useRef([])
+  const titleRef = useRef()
+  const textRef = useRef()
 
   const cards = ["Front-end", "Creative developer", "3D sites", "Three.js", "React"]
 
@@ -70,7 +73,7 @@ export default function MyServices() {
       yPercent: 200,
       y: 0.5 * window.innerHeight,
     })
-
+    animateText(titleRef, textRef)
     createPinning()
     cardsAnimation()
   })
@@ -81,7 +84,7 @@ export default function MyServices() {
         <div className='pin-container' ref={pinContainerRef}>
 
 
-          <div className='title-services'>
+          <div className='title-services' ref={titleRef}>
             <h1>[My main services]</h1>
           </div>
           <div className='container-cards'>
@@ -94,7 +97,7 @@ export default function MyServices() {
               ))}
             </div>
 
-            <div className='text-services'>
+            <div className='text-services' ref={textRef}>
               <p>I create projects that have <span>life</span>, <span>body</span> and <span>heart</span>.</p>
             </div>
 

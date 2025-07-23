@@ -7,10 +7,12 @@ import { useGSAP } from '@gsap/react';
 import Projects from './HomeComponents/Projects';
 import Footer from './HomeComponents/Footer/Footer';
 import SplitType from 'split-type'
+import animateText from '../../services/animeTexts';
 
 
 export default function Home() {
     const creativeText = useRef()
+    const textRef = useRef()
 
 
 
@@ -31,12 +33,16 @@ export default function Home() {
         })
     }
 
+
     useEffect(() => {
         const interval = setInterval(() => {
             animateTitleHome();
         }, 5000);
+        animateText(textRef)
 
         return () => clearInterval(interval);
+
+
     }, []);
 
 
@@ -101,7 +107,7 @@ export default function Home() {
 
                 </div>
 
-                <div className='bottom-home'>
+                <div className='bottom-home' ref={textRef}>
                     <p>I am a front-end developer / Creative developer <br></br>
                         and I love creating creative websites.
                     </p>

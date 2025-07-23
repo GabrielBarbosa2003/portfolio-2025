@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './projects.css'
 import cottonImg from '../../../../assets/projects-img/cotton-img.jpg'
 import cottonVideo from '../../../../assets/projects-videos/cotton-video.mp4'
@@ -15,6 +15,7 @@ import arrow from '../../../../assets/icon-arrow.png'
 import { gsap } from "gsap";
 import { useRef } from 'react';
 import ReactPlayer from 'react-player'
+import animateText from '../../../../services/animeTexts'
 
 
 export default function Projects() {
@@ -22,11 +23,14 @@ export default function Projects() {
     const techsRef = useRef([])
     const [playingIndex, setPlayingIndex] = useState(null);
 
+    const titleRef = useRef()
+    const textRef = useRef()
+
     const projects = [
-        {id: 1, name:"Cotton Films", year:"2024", backImage: cottonImg , url: cottonVideo , techs: "(React, GSAP, Development)"},
-        {id: 2, name:"Revelatio Studio", year:"2025", backImage: revelatioImg , url: revelatioVideo , techs: "(React, GSAP, Development)"},
-        {id: 3, name:"Galaxy 3D", year:"2025", backImage: galaxyImg , url: galaxyVideo , techs: "(React, Three.js, Study)"},
-        {id: 4, name:"Gallery 3D", year:"2024", backImage: galleryImg , url: galleryVideo , techs: "(React, Gsap, Study)"}
+        { id: 1, name: "Cotton Films", year: "2024", backImage: cottonImg, url: cottonVideo, techs: "(React, GSAP, Development)" },
+        { id: 2, name: "Revelatio Studio", year: "2025", backImage: revelatioImg, url: revelatioVideo, techs: "(React, GSAP, Development)" },
+        { id: 3, name: "Galaxy 3D", year: "2025", backImage: galaxyImg, url: galaxyVideo, techs: "(React, Three.js, Study)" },
+        { id: 4, name: "Gallery 3D", year: "2024", backImage: galleryImg, url: galleryVideo, techs: "(React, Gsap, Study)" }
 
     ]
 
@@ -45,9 +49,9 @@ export default function Projects() {
         gsap.to([videoRef.current[index], techsRef.current[index]], {
             opacity: 0,
             ease: "power1.in",
-               onComplete: () => {
-            setPlayingIndex(prev => (prev === index ? null : prev));
-        }
+            onComplete: () => {
+                setPlayingIndex(prev => (prev === index ? null : prev));
+            }
         })
 
 
@@ -55,53 +59,57 @@ export default function Projects() {
 
     }
 
+    useEffect(() => {
+        animateText(titleRef, textRef)
+    },[])
+
 
 
     return (
         <section className='projects-container' id='works'>
             <div className='grid-global'>
-                <div className='title-projects'>
+                <div className='title-projects' ref={titleRef}>
                     <h1>[Works & Projects]</h1>
-                    <div className='sub-text'>
+                    <div className='sub-text' ref={textRef}>
                         <p>Here we have some of my <br></br>
                             personal & professional projects.</p>
                     </div>
                 </div>
 
                 <div className='projects-section'>
-                    
+
                     {projects.map((project, index) => (
                         <div className='project'
-                        onMouseEnter={() => showVideo(index)}
-                        onMouseLeave={() => hiddeVideo(index)}
-                        key={project.id}>
+                            onMouseEnter={() => showVideo(index)}
+                            onMouseLeave={() => hiddeVideo(index)}
+                            key={project.id}>
 
-                        <div className='image-container-back'>
-                            <div className='header-project'>
-                                <div className='name-project'>
-                                    <img src={arrow} alt='arrow' />
-                                    <p>{project.name}</p>
+                            <div className='image-container-back'>
+                                <div className='header-project'>
+                                    <div className='name-project'>
+                                        <img src={arrow} alt='arrow' />
+                                        <p>{project.name}</p>
+                                    </div>
+                                    <p>{project.year}</p>
                                 </div>
-                                <p>{project.year}</p>
+                                <img src={project.backImage} alt='image project' />
+                                <div className='video-container-back' ref={el => videoRef.current[index] = el}>
+                                    <ReactPlayer
+                                        className="react-player"
+                                        url={project.url}
+                                        playing={playingIndex === index}
+                                        controls={false}
+                                        muted={true}
+                                        loop={true}
+                                        width="100%"
+                                    />
+                                </div>
+                                <div className='techs' ref={el => techsRef.current[index] = el}>
+                                    <p>{project.techs}</p>
+                                </div>
                             </div>
-                            <img src={project.backImage} alt='image project' />
-                            <div className='video-container-back' ref={el => videoRef.current[index] = el}>
-                                <ReactPlayer
-                                    className="react-player"
-                                    url={project.url}
-                                    playing={playingIndex === index}
-                                    controls={false}
-                                    muted={true}
-                                    loop={true}
-                                    width="100%"
-                                />
-                            </div>
-                            <div className='techs' ref={el => techsRef.current[index] = el}>
-                                <p>{project.techs}</p>
-                            </div>
-                        </div>
 
-                    </div>
+                        </div>
                     ))}
 
                 </div>

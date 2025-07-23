@@ -3,12 +3,36 @@ import me from '../../assets/myself.png'
 import ICanHelp from './AboutComponents/ICanHelp'
 import Experience from './AboutComponents/Experience'
 import Footer from '../Home/HomeComponents/Footer/Footer'
+import { useRef } from 'react'
+import { useGSAP } from '@gsap/react'
+import animateText from '../../services/animeTexts'
+import { gsap } from "gsap";
 
 export default function About() {
+    const titleRef = useRef()
+    const aboutMeRef = useRef()
+    const imageRef = useRef()
+
+    function animateImageAbout(){
+        gsap.fromTo(imageRef.current,{
+            opacity: 0,
+            yPercent: 20,
+            ease: "power2.inOut",
+        },{
+            opacity: 1,
+            yPercent: 0,
+            ease: "power2.inOut",
+            delay: 0.5
+        })
+    }
+    useGSAP(() => {
+        animateText(titleRef, aboutMeRef)
+        animateImageAbout()
+    },[])
     return (
         <section className='container-about'>
             <div className='grid-global'>
-                <div className='about-text'>
+                <div className='about-text' ref={titleRef}>
                     <p>Creative Developer from Brazil <br></br> working globally</p>
                     <div className='initial-text'>
                         {window.innerWidth >= 481 ? (
@@ -32,10 +56,10 @@ export default function About() {
 
                 <div className='about-me'>
                     <div className='myself'>
-                        <img src={me} alt='myself' />
+                        <img src={me} alt='myself' ref={imageRef} />
                     </div>
 
-                    <div className='text-about-me'>
+                    <div className='text-about-me' ref={aboutMeRef}>
                         <p>Gosto de pensar que cada linha de código que escrevo é um convite para as pessoas ficarem mais um pouco.<br></br>
                             <br></br>
 

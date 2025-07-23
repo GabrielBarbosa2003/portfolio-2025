@@ -77,7 +77,6 @@ export default function Footer() {
                                      <li>
                                         LinkedIn
                                         <img src={arrowSocial} alt='arrow' />
-
                                     </li>
                                    </a>
                                    <a href='https://github.com/GabrielBarbosa2003' target='_blank'>

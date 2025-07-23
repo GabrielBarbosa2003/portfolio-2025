@@ -3,17 +3,26 @@ import arrowEmail from '../../../../assets/bottom/arrow-email.svg'
 import arrowSocial from '../../../../assets/bottom/arrow-social.svg'
 import dot from '../../../../assets/bottom/dot.png'
 import letsTalk from '../../../../assets/bottom/lets-talk.svg'
+import { useEffect, useRef } from 'react'
+import { useGSAP } from '@gsap/react'
+import animateText from '../../../../services/animeTexts'
 
 
 
 
 export default function Footer() {
+    const titleRef = useRef()
+
+   useGSAP(() => {
+    animateText(titleRef)
+   },[])
+
     return (
         <section className='footer-home-container' id='contact'>
             <div className='grid-global'>
-                <div className='head-text-bottom'>
-                    <h1>Dont be shy, if you have any project in mind,</h1>
-                    <span>Get in touch</span>
+                <div className='head-text-bottom' ref={titleRef}>
+                    <h1>Dont be shy, if you have any project in mind,</h1> <br></br>
+                    <p>Get in touch</p>
                 </div>
                 <div className='contacts-bottom'>
                     <h2>New Projects / Bussines</h2>

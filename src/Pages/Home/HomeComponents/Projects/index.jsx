@@ -64,7 +64,6 @@ export default function Projects() {
     }
 
     function animateProjects() {
-        console.log( projectRef.current)
 
         projectRef.current.forEach((project) => {
             gsap.fromTo(project, {

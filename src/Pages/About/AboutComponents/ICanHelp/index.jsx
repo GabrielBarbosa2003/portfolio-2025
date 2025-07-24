@@ -47,6 +47,8 @@ export default function ICanHelp() {
 
         })
 
+        ScrollTrigger.refresh();
+
 
     })
 

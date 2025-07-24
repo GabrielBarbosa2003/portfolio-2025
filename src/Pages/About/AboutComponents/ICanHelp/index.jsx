@@ -29,6 +29,7 @@ export default function ICanHelp() {
                 onLeave: () => sec.classList.remove("active"),
                 onEnterBack: () => sec.classList.add("active"),
                 onLeaveBack: () => sec.classList.remove("active"),
+                invalidateOnRefresh: true,
                 markers: true,
             })
         })
@@ -48,7 +49,7 @@ export default function ICanHelp() {
 
         ScrollTrigger.refresh();
 
-    })
+    },[])
 
     return (
         <section className='icanhelp-section'>

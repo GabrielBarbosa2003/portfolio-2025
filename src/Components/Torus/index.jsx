@@ -66,22 +66,21 @@ export default function Torus() {
 
     const torusZ = viewport.width >= 7.5 ? -3 : 5
     const isMobile = window.innerWidth <= 768;
-    console.log(isMobile)
-
 
     return (
 
         <group scale={viewport.width / 18}>
             <mesh ref={torus} rotation={[-1, 10, 0]} position={[0, 0.2, torusZ]}>
                 <torusGeometry args={[2, 0.6, 16, 32]} />
-                <MeshTransmissionMaterial  
+                {/* <MeshTransmissionMaterial  
                 thickness={0.20}
                 roughness={0}
                 transmission={1.0}
                 ior={1.2}
                 chromaticAberration={0.02}
                 backside={true}
-                />
+                /> */}
+                <meshStandardMaterial color={"black"}/>
             </mesh>
            {viewport.width >= 9 ?  <CameraRig/> : <></>}
             {/* <PerspectiveCamera makeDefault fov={75} near={0.1} far={1000} position={[0, 0, 5]}/> */}

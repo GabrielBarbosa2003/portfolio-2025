@@ -56,8 +56,6 @@ export default function ICanHelp() {
             <div className='grid-global'>
                 <h1 ref={titleRef}>Eu posso te ajudar com...</h1>
 
-                <div className='list-help'>
-
                     {list.map((item, index) => (
                         <div className='item-list' key={item.id} ref={(el) => listRef.current[index] = el}>
                             <h2>{item.job}</h2>
@@ -81,7 +79,6 @@ export default function ICanHelp() {
                         </div>
                     </div> */}
 
-                </div>
 
 
 

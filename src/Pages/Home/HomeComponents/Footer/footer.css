@@ -15,7 +15,7 @@
     font-size: 40px;
     opacity: 60%;
     font-weight: 500;
-    will-change: transform;
+    
     
 }
 
@@ -32,13 +32,14 @@
     clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
     will-change: transform;
     
+    
 }
 
 .contacts-bottom h2 {
     font-size: 24px;
     font-weight: 500;
     opacity: 0.6;
-    will-change: transform;
+    
     
 }
 
@@ -52,13 +53,13 @@
 }
 .bottom-email a{
     color: white;
-    will-change: transform;
+    
 }
 
 .bottom-email img {
     width: 15px;
     height: 15px;
-    will-change: transform;
+    
 
 }
 
@@ -96,7 +97,7 @@
     clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
     color: white;
     max-width: max-content;
-    will-change: transform;
+    
     
 
 }
@@ -119,7 +120,7 @@
 .social-bottom li img {
     width: 20px;
     height: 20px;
-    will-change: transform;
+    
 
 }
 
@@ -131,7 +132,7 @@
 .available p {
     font-size: 16px;
     font-weight: 400;
-    will-change: transform;
+    
     
 }
 
@@ -144,12 +145,12 @@
 .work-available img {
     width: 18px;
     height: 18px;
-    will-change: transform;
+    
 }
 
 .work-available p {
     color: #808080;
-    will-change: transform;
+    
 }
 
 .work-available .word,
@@ -158,6 +159,7 @@
 .lets-talk {
     clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
     will-change: transform;
+    
 
 }
 
@@ -177,7 +179,7 @@
     
 }
 .local-rights p{
-    will-change: transform;
+    
 }
 
 .lets-talk {
@@ -201,6 +203,7 @@
 .head-text-bottom .word {
     clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
     will-change: transform;
+    
 }
 
 .fade-in-out {

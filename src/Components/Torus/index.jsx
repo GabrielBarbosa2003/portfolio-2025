@@ -7,10 +7,10 @@ import { useRef } from 'react'
 import { easing } from 'maath'
 
 function CameraRig() {
-  useFrame((state, delta) => {
-    easing.damp3(state.camera.position, [-1 + (state.pointer.x * state.viewport.width) / 3, (1 + state.pointer.y) / 2, 5.5], 0.5, delta)
-    state.camera.lookAt(0, 0, 0)
-  })
+    useFrame((state, delta) => {
+        easing.damp3(state.camera.position, [-1 + (state.pointer.x * state.viewport.width) / 3, (1 + state.pointer.y) / 2, 5.5], 0.5, delta)
+        state.camera.lookAt(0, 0, 0)
+    })
 }
 
 
@@ -18,9 +18,9 @@ export default function Torus() {
     const torus = useRef(null)
 
     const sizes = {
-    width: window.innerWidth,
-    height: window.innerHeight
-}
+        width: window.innerWidth,
+        height: window.innerHeight
+    }
 
     // const materialProps = useControls({
 
@@ -58,7 +58,7 @@ export default function Torus() {
         // mouse.camera.position.x = (parallaxX - mouse.camera.position.x) * 3 * deltaTime 
         // mouse.camera.position.y = (parallaxY - mouse.camera.position.y) * 3 * deltaTime 
 
-    
+
 
     })
 
@@ -71,18 +71,19 @@ export default function Torus() {
 
         <group scale={viewport.width / 18}>
             <mesh ref={torus} rotation={[-1, 10, 0]} position={[0, 0.2, torusZ]}>
-                <torusGeometry args={[2, 0.6, 16, 32]} />
-                <MeshTransmissionMaterial  
-                thickness={0.20}
-                roughness={0}
-                transmission={1.0}
-                ior={1.2}
-                chromaticAberration={0.02}
-                backside={true}
-                />
-                {/* <meshStandardMaterial color={"black"}/> */}
+                <torusGeometry args={[2, 0.6, 16, 50]} />
+                {!isMobile ? <MeshTransmissionMaterial
+                    thickness={0.20}
+                    roughness={0}
+                    transmission={1.0}
+                    ior={1.2}
+                    chromaticAberration={0.02}
+                    backside={true}
+                /> : <meshStandardMaterial color={"black"} />}
+
+
             </mesh>
-           {viewport.width >= 9 ?  <CameraRig/> : <></>}
+            {viewport.width >= 9 ? <CameraRig /> : <></>}
             {/* <PerspectiveCamera makeDefault fov={75} near={0.1} far={1000} position={[0, 0, 5]}/> */}
         </group>
 

@@ -22,15 +22,14 @@ export default function ICanHelp() {
         listRef.current.forEach((sec) => {
             ScrollTrigger.create({
                 trigger: sec,
-                start: "top 50%",
-                end: "bottom 50%",
+                start: "top 60%",
+                end: "bottom 60%",
                 toggleClass: { targets: sec, className: "active" },
                 onEnter: () => sec.classList.add("active"),
                 onLeave: () => sec.classList.remove("active"),
                 onEnterBack: () => sec.classList.add("active"),
                 onLeaveBack: () => sec.classList.remove("active"),
                 markers: true,
-                invalidateOnRefresh: true,
             })
         })
 
@@ -48,7 +47,6 @@ export default function ICanHelp() {
         })
 
         ScrollTrigger.refresh();
-
 
     })
 

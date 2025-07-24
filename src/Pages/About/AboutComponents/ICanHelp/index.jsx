@@ -1,8 +1,8 @@
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger"; 
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import './icanhelp.css'
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export default function ICanHelp() {
     gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -14,6 +14,21 @@ export default function ICanHelp() {
         { id: 2, job: "Sistemas", desc: <>Já trabalhei em diversos sitemas front-end, desde <br></br> grandes projetos a pequenos SASS</> },
         { id: 3, job: "Design", desc: <>Caso nao tenha um projeto pronto, podemos<br></br> criar algo com sua cara</> }
     ]
+
+    useEffect(() => {
+        const handleResize = () => {
+            ScrollTrigger.refresh();
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        window.addEventListener('load', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('load', handleResize);
+        };
+    }, []);
 
 
     useGSAP(() => {
@@ -49,7 +64,7 @@ export default function ICanHelp() {
 
         ScrollTrigger.refresh();
 
-    },[])
+    }, [])
 
     return (
         <section className='icanhelp-section'>

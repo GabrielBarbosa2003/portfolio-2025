@@ -61,19 +61,19 @@ export default function About() {
                         </div>
 
                         <div className='text-about-me' ref={aboutMeRef}>
-                            <p>Gosto de pensar que cada linha de código que escrevo é um convite para as pessoas ficarem mais um pouco.<br></br>
+                            <p>I like to think that every line of code I write is an invitation for people to stay a little longer.<br></br>
                                 <br></br>
 
-                                Sou apaixonado por transformar ideias em experiências digitais que contam histórias, criando interfaces que não apenas funcionam, mas que fazem sentido para quem usa. Entre animações suaves, detalhes quase invisíveis e a busca constante pelo simples, acredito que a tecnologia é mais humana quando respeita o tempo e a atenção de quem está do outro lado da tela.<br></br>
+                                I'm passionate about transforming ideas into digital experiences that tell stories, creating interfaces that not only work but also make sense to those who use them. Between smooth animations, nearly invisible details, and the constant pursuit of simplicity, I believe that technology is more human when it respects the time and attention of those on the other side of the screen.<br></br>
                                 <br></br>
-                                Se você também acredita que design e código podem mudar como as pessoas sentem, então já temos algo em comum.<br></br>
+                                If you also believe that design and code can change how people feel, then we already have something in common.<br></br>
 
                                 <br></br>
-                                E sobre eu ? A... Escrevo código, tomo café e gosto de treinar, já é algo!
+                                And what about me? Yeah... I write code, drink coffee, and enjoy working out—that's already something!
                                 <br></br>
                                 <br></br>
 
-                                Se voce tem alguma ideia, colaboraçoes, ou oportunidade de emprego, nao hesite em entrar em contato.</p>
+                                If you have any ideas, collaborations, or job opportunities, don't hesitate to get in touch.</p>
                         </div>
                     </div>
 

@@ -31,7 +31,6 @@ export default function ICanHelp() {
                 onEnterBack: () => sec.classList.add("active"),
                 onLeaveBack: () => sec.classList.remove("active"),
                 invalidateOnRefresh: true,
-                markers: true,
             })
         })
 

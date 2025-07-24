@@ -1,6 +1,7 @@
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger"; import './icanhelp.css'
+import { ScrollTrigger } from "gsap/ScrollTrigger"; 
+import './icanhelp.css'
 import { useRef } from "react";
 
 export default function ICanHelp() {
@@ -19,7 +20,6 @@ export default function ICanHelp() {
         const sections = [...document.querySelectorAll('.item-list')];
 
         listRef.current.forEach((sec) => {
-            console.log(sec)
             ScrollTrigger.create({
                 trigger: sec,
                 start: "top center",

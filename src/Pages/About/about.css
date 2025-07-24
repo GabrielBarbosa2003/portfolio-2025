@@ -80,9 +80,10 @@
 @media(max-width: 600px) {}
 
 @media(max-width: 480px) {
-    /* .about-me{
+    .about-me{
        grid-template-columns: 100%;
-    } */
+       grid-template-rows: auto auto;
+    }
     .myself img{
         max-width: 400px;
     }

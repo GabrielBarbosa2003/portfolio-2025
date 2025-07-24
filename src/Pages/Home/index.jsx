@@ -92,9 +92,9 @@ export default function Home() {
                                     </h1>
                                 </div>
                             </div>
-                            <div className='webgl-mobile'>
+                            {/* <div className='webgl-mobile'>
                                 <Scene />
-                            </div>
+                            </div> */}
 
                             <div className='dev-mobile'>
                                 <h1>Developer</h1>

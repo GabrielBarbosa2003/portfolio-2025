@@ -10,9 +10,9 @@ export default function ICanHelp() {
     const listRef = useRef([])
 
     const list = [
-        { id: 1, job: "Sites", desc: <>Eu crio sites responsivos, com foco em pequenas <br></br> interaçoes, utilizando react, gsap e three.js</> },
-        { id: 2, job: "Sistemas", desc: <>Já trabalhei em diversos sitemas front-end, desde <br></br> grandes projetos a pequenos SASS</> },
-        { id: 3, job: "Design", desc: <>Caso nao tenha um projeto pronto, podemos<br></br> criar algo com sua cara</> }
+        { id: 1, job: "Websites", desc: <>I create responsive websites, focusing on small <br></br> interactions, using react, gsap and three.js</> },
+        { id: 2, job: "Systems", desc: <>I've worked on several front-end systems, <br></br> from large projects to small SASS projects.</> },
+        { id: 3, job: "Design", desc: <>If you don't have a ready-made project,<br></br> we can create something with your style.</> }
     ]
 
 
@@ -63,7 +63,7 @@ export default function ICanHelp() {
     return (
         <section className='icanhelp-section'>
             <div className='grid-global'>
-                <h1 ref={titleRef}>Eu posso te ajudar com...</h1>
+                <h1 ref={titleRef}>I can help you with...</h1>
 
                 <div className='list-help'>
 

@@ -21,6 +21,7 @@ export default function ICanHelp() {
                 onLeave: () => sec.classList.remove("active"),
                 onEnterBack: () => sec.classList.add("active"),
                 onLeaveBack: () => sec.classList.remove("active"),
+                markers:true
             })
         })
 

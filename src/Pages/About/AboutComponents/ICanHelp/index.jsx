@@ -17,7 +17,6 @@ export default function ICanHelp() {
 
     useGSAP(() => {
         const sections = [...document.querySelectorAll('.item-list')];
-        console.log(listRef.current)
 
         listRef.current.forEach((sec) => {
             console.log(sec)

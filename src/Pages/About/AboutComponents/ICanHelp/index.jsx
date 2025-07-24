@@ -20,10 +20,11 @@ export default function ICanHelp() {
         console.log(listRef.current)
 
         listRef.current.forEach((sec) => {
+            console.log(sec)
             ScrollTrigger.create({
                 trigger: sec,
-                start: "top 60%",
-                end: "bottom 60%",
+                start: "top center",
+                end: "bottom center",
                 toggleClass: { targets: sec, className: "active" },
                 onEnter: () => sec.classList.add("active"),
                 onLeave: () => sec.classList.remove("active"),

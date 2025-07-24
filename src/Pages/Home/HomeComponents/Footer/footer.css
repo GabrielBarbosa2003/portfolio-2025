@@ -7,6 +7,7 @@
 
 .head-text-bottom {
     margin-left: 111px;
+    will-change: transform;
 }
 
 .head-text-bottom h1,
@@ -14,6 +15,7 @@
     font-size: 40px;
     opacity: 60%;
     font-weight: 500;
+    will-change: transform;
 }
 
 .head-text-bottom span {
@@ -22,17 +24,21 @@
 
 .contacts-bottom {
     margin-top: 120px;
+    will-change: transform;
 }
 
 .contacts-bottom .word {
     clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+    will-change: transform;
 }
 
 .contacts-bottom h2 {
     font-size: 24px;
     font-weight: 500;
     opacity: 0.6;
+    will-change: transform;
 }
+
 
 .bottom-email {
     display: flex !important;
@@ -74,6 +80,7 @@
     display: flex !important;
     flex-direction: column;
     gap: 8px;
+    will-change: transform;
 
 }
 
@@ -84,6 +91,8 @@
     clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
     color: white;
     max-width: max-content;
+    will-change: transform;
+
 }
 
 .contact-socials ul li::after {
@@ -109,16 +118,19 @@
 
 .available {
     margin-top: 70px;
+    will-change: transform;
 }
 
 .available p {
     font-size: 16px;
     font-weight: 400;
+    will-change: transform;
 }
 
 .work-available {
     display: flex !important;
     align-items: center;
+    will-change: transform;
 }
 
 .work-available img {
@@ -151,6 +163,7 @@
     align-items: center;
     margin-top: 20px;
     color: #808080;
+    will-change: transform;
 }
 
 .lets-talk {
@@ -162,11 +175,13 @@
     margin-top: 30px;
     padding-bottom: 5px;
     overflow: hidden;
+    will-change: transform;
 }
 
 .lets-talk .logo {
     width: 100%;
     height: auto;
+    will-change: transform;
 }
 
 .head-text-bottom .word {

@@ -15,24 +15,10 @@ export default function ICanHelp() {
         { id: 3, job: "Design", desc: <>Caso nao tenha um projeto pronto, podemos<br></br> criar algo com sua cara</> }
     ]
 
-    useEffect(() => {
-        const handleResize = () => {
-            ScrollTrigger.refresh();
-        };
 
-        window.addEventListener('resize', handleResize);
-
-        window.addEventListener('load', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-            window.removeEventListener('load', handleResize);
-        };
-    }, []);
 
 
     useGSAP(() => {
-        const sections = [...document.querySelectorAll('.item-list')];
 
         listRef.current.forEach((sec) => {
             ScrollTrigger.create({
@@ -62,9 +48,17 @@ export default function ICanHelp() {
 
         })
 
-        ScrollTrigger.refresh();
-
     }, [])
+
+    useEffect(() => {
+        window.addEventListener('resize', ScrollTrigger.refresh);
+        window.addEventListener('load', ScrollTrigger.refresh);
+
+        return () => {
+            window.removeEventListener('resize', ScrollTrigger.refresh);
+            window.removeEventListener('load', ScrollTrigger.refresh);
+        };
+    }, []);
 
     return (
         <section className='icanhelp-section'>

@@ -8,7 +8,7 @@ export default function Scene() {
         <Canvas dpr={[1, 1.5]}>
             <Torus />
             <directionalLight intensity={10} position={[0, 2, 3]} />
-            <Environment preset="city" />
+            {/* <Environment preset="city" /> */}
         </Canvas>
     )
 }

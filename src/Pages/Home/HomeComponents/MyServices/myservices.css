@@ -5,6 +5,10 @@
     margin-top: 130px;
 }
 
+.services-container .char{
+    will-change: transform;
+}
+
 .title-services {
     width: 100%;
     display: flex;
@@ -51,6 +55,7 @@
     padding: 0.8vw;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
+    will-change: transform;
 }
 
 .container-cards .text-services {

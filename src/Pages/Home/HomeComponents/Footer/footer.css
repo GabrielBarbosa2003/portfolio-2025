@@ -62,6 +62,7 @@
 .bottom-email img {
     width: 15px;
     height: 15px;
+    will-change: transform;
     
 
 }
@@ -122,6 +123,7 @@
 .social-bottom li img {
     width: 20px;
     height: 20px;
+    will-change: transform;
     
 
 }
@@ -147,6 +149,7 @@
 .work-available img {
     width: 18px;
     height: 18px;
+    will-change: transform;
     
 }
 
@@ -200,6 +203,9 @@
     width: 100%;
     height: auto;
     
+}
+.lets-talk img{
+    will-change: transform;
 }
 
 .head-text-bottom .word {

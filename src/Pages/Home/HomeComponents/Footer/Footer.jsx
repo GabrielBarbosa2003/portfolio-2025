@@ -28,14 +28,14 @@ export default function Footer() {
             }
         })
 
-        // tl.fromTo([images], {
-        //     yPercent: 120,
-        //     ease: "power2.inOut",
-        // }, {
-        //     yPercent: 0,
-        //     ease: "power2.inOut",
-        //     stagger: 0.003
-        // })
+        tl.fromTo([images], {
+            yPercent: 120,
+            ease: "power2.inOut",
+        }, {
+            yPercent: 0,
+            ease: "power2.inOut",
+            stagger: 0.003
+        })
     }
 
 

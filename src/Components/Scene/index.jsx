@@ -4,8 +4,9 @@ import Torus from '../Torus'
 
 export default function Scene() {
     return (
-        <Canvas>
-            <Torus/>
+
+        <Canvas dpr={[1, 1.5]}>
+            <Torus />
             <directionalLight intensity={10} position={[0, 2, 3]} color={"blue"} />
             <Environment preset="city" />
         </Canvas>

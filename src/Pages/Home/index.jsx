@@ -52,9 +52,9 @@ export default function Home() {
     return (
 
         <>
-            {/* <div className='webgl-desk'>
+            <div className='webgl-desk'>
                 <Scene />
-            </div> */}
+            </div>
             <section className='container-home'>
                 <div className='grid-global'>
                     <div className='middle-home'>

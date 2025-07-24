@@ -26,12 +26,12 @@ export default function About() {
         })
     }
     useGSAP(() => {
-        // animateText(titleRef)
-        // animateImageAbout()
+        animateText(titleRef)
+        animateImageAbout()
     }, [])
     return (
         <>
-            {/* <section className='container-about'>
+            <section className='container-about'>
                 <div className='grid-global'>
                     <div className='about-text' ref={titleRef}>
                         <p>Creative Developer from Brazil <br></br> working globally</p>
@@ -81,7 +81,7 @@ export default function About() {
 
 
 
-            </section> */}
+            </section>
             <ICanHelp />
             <Experience />
             <Footer />

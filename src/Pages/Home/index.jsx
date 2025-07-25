@@ -8,11 +8,14 @@ import Projects from './HomeComponents/Projects';
 import Footer from './HomeComponents/Footer/Footer';
 import SplitType from 'split-type'
 import animateText from '../../services/animeTexts';
+import CustomEase from 'gsap/CustomEase';
 
-
+let isInitialLoad = true;
 export default function Home() {
     const creativeText = useRef()
     const textRef = useRef()
+    const [showPreloader, setShowPreloader] = useState(isInitialLoad);
+    console.log(showPreloader)
 
 
 
@@ -47,6 +50,56 @@ export default function Home() {
 
     // create pre loader
 
+    useEffect(() => {
+        gsap.registerPlugin(CustomEase);
+        CustomEase.create("hop", "0.9, 0, 0.1, 1");
+    }, []);
+
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            delay: 0.3,
+            defaults: {
+                ease: "hop"
+            }
+        })
+        tl.to(".word-loader h1", {
+            y: "0%",
+            duration: 1.5
+        })
+        tl.to(".divider", {
+            scaleY: "100%",
+            duration: 1,
+            onComplete: () =>
+                gsap.to(".divider", {
+                    opacity: 0,
+                    duration: 0.3,
+                    delay: 0.3
+                })
+        })
+
+        tl.to("#word-1 h1",{
+            y: "100%",
+            duration: 1,
+            delay: 0.3
+        })
+        tl.to("#word-2 h1",{
+            y: "-100%",
+            duration: 1
+        }, "<")
+
+        tl.to(".block",{
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+            duration: 1,
+            stagger: 0.1,
+            delay: 0.75,
+            onComplete: () =>
+                gsap.to(".loader",{
+                    zIndex:-1
+                })
+        },"<")
+
+    }, [])
+
 
 
 
@@ -54,9 +107,31 @@ export default function Home() {
     return (
 
         <>
-            <div className='webgl-desk'>
-                <Scene />
+
+            <div className='loader'>
+                <div className='overlay'>
+                    <div className='block'></div>
+                    <div className='block'></div>
+
+                </div>
+
+                <div className="intro-logo">
+                    <div className="word-loader" id="word-1">
+                        <h1>
+                            <span>Gabriel</span>
+                        </h1>
+                    </div>
+                    <div className="word-loader" id="word-2">
+                        <h1>Barbosa</h1>
+                    </div>
+                </div>
+
+                <div className="divider"></div>
+
             </div>
+            {/* <div className='webgl-desk'>
+                <Scene />
+            </div>  */}
             <section className='container-home'>
                 <div className='grid-global'>
                     <div className='middle-home'>

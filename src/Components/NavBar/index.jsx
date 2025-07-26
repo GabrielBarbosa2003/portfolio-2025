@@ -84,11 +84,11 @@ export default function NavBar() {
                                     onMouseEnter={() => menuMouseEnter(index)}
                                     onMouseLeave={() => menuMouseLeave(index)}
                                 >
-                                    <a href={item.link}>
+                                    <Link to={item.link}>
                                         {item.text}
                                         <br></br>
                                         {item.text}
-                                    </a>
+                                    </Link>
 
                                 </li>
                             ))}

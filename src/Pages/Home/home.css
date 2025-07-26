@@ -141,7 +141,7 @@
 .block {
   width: 100%;
   height: 100%;
-  background: #303030;
+  background: #0F0F0F;
 }
 
 .intro-logo {
@@ -167,6 +167,7 @@
   font-size: 2.5rem;
   color: white;
   will-change: transform;
+  font-weight: 400;
 }
 .word-loader{
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);

@@ -5,12 +5,15 @@
 }
 
 .middle-home {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: start;
-    width: 100%;
-    height: 192px;
-    margin-top: 39px;
+    padding: 0px 1.875rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
 }
 
 .middle-home h2 {
@@ -53,8 +56,15 @@
     outline: none;
     width: 100%;
     height: 100%;
-    z-index: 1;
     will-change: transform;
+    z-index: 2;
+}
+.webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: 1;
 }
 
 .webgl-mobile {

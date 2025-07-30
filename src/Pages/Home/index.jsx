@@ -174,9 +174,9 @@ export default function Home() {
 
 
             </section>
-            {/* <MyServices />
+            <MyServices />
             <Projects />
-            <Footer /> */}
+            <Footer />
 
 
         </>

@@ -2,7 +2,7 @@
     background: var(--color-black-background);
     width: 100%;
     height: 500vh;
-    margin-top: 130px;
+    padding-top: 1rem;
 }
 
 .services-container .char{
@@ -115,6 +115,9 @@
     .card{
         width: 30vw;
         font-size: 2vw;
+    }
+     .title-services{
+        padding-top: 1.25rem;
     }
 }
 

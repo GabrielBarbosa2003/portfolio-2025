@@ -32,6 +32,7 @@ export default function Home() {
 
 
 
+
     function animateTitleHome() {
         const text = new SplitType(creativeText.current, { types: 'words, chars' })
         const tl = gsap.timeline()
@@ -157,66 +158,20 @@ export default function Home() {
 
                 </div>
             }
-            <div className='webgl-desk'>
-                <Scene />
-            </div>
+
             <section className='container-home'>
                 <div className='grid-global'>
-                    <div className='middle-home'>
-                        <p>
-                            available for new jobs
-                        </p>
-                        <h2>
-                            Freelance&<br></br>
-                            Developer
-                        </h2>
+                    <div className='webgl'>
+                        <Scene />
                     </div>
-                    {window.innerWidth > 480 ? (
-                        <div className='creative-home'>
-                            <div className='front-criative'>
-
-                                <h1 ref={creativeText}>
-                                    Frontend
-                                    <br></br>
-                                    Creative
-                                </h1>
-
-                            </div>
-                            <div>
-                                <h1>Developer</h1>
-                            </div>
-                        </div>
-                    ) : (
-                        <div className='mobile-middle'>
-                            <div className='animate-text-mobile'>
-                                <div className='text-animation-mobile'>
-                                    <h1 ref={creativeText}>
-                                        Frontend
-                                        <br></br>
-                                        Creative
-                                    </h1>
-                                </div>
-                            </div>
-                            <div className='webgl-mobile'>
-                                <Scene />
-                            </div>
-
-                            <div className='dev-mobile'>
-                                <h1>Developer</h1>
-                            </div>
-
-                        </div>
-                    )}
-
+                    <div className='middle-home'>
+                        <p>Front-end</p>
+                        <p>Developer</p>
+                    </div>
 
 
                 </div>
 
-                <div className='bottom-home' ref={textRef}>
-                    <p>I am a front-end developer / Creative developer <br></br>
-                        and I love creating creative websites.
-                    </p>
-                </div>
 
             </section>
             <MyServices />

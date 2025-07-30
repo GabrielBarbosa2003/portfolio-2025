@@ -116,6 +116,9 @@
         width: 30vw;
         font-size: 2vw;
     }
+     .title-services{
+        padding-top: 1.25rem;
+    }
 }
 
 @media(max-width: 430px) {

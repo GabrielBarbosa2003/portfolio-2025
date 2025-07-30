@@ -123,11 +123,7 @@
 
 @media(max-width: 991px) {}
 
-@media(max-width: 800px) {
-    .container-home {
-        height: 70vh;
-    }
-}
+@media(max-width: 800px) {}
 
 @media(max-width: 600px) {}
 

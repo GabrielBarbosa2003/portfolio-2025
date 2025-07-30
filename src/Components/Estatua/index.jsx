@@ -1,5 +1,5 @@
 import { OrbitControls, useGLTF, useTexture } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
+import { useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { easing } from 'maath'
 
@@ -19,10 +19,18 @@ export default function Estatua() {
     const matcapTexture = useTexture('/10.png')
     matcapTexture.flipY = false
     matcapTexture.colorSpace = THREE.SRGBColorSpace
+    const { viewport } = useThree()
+
+    
+    const isMobile = window.innerWidth < 550;
+    console.log(isMobile)
 
     return (
         <group>
-            <mesh receiveShadow castShadow geometry={nodes.texture_pbr_v128.geometry} scale={[6, 4, 5]} rotation={[1.4, 0, 0]} position={[0, -0.5, 1.8]}>
+            <mesh receiveShadow castShadow geometry={nodes.texture_pbr_v128.geometry} 
+            scale={!isMobile ? [6, 4, 5] : [4,3,4] } 
+            rotation={[1.4, 0, 0]} 
+            position={!isMobile ? [0, -0.5, 1.8] : [0, -0.9, 1.8]}>
                 <meshMatcapMaterial matcap={matcapTexture} />
             </mesh>
             <perspectiveCamera />

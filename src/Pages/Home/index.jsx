@@ -161,7 +161,7 @@ export default function Home() {
 
             <section className='container-home'>
                 <div className='grid-global'>
-                    <div className='webgl-desk'>
+                    <div className='webgl'>
                         <Scene />
                     </div>
                     <div className='middle-home'>

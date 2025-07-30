@@ -1,53 +1,53 @@
 .container-home {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-     background: #E6E6E6;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: #E6E6E6;
 }
 
 .middle-home {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 1.875rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 3vw;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 1.875rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3vw;
 }
 
 
-.webgl{
-    position: absolute;
-    left: 0;
-    outline: none;
-    width: 100%;
-    height: 100%;
-    will-change: transform;
-    z-index: 1;
+.webgl {
+  position: absolute;
+  left: 0;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  z-index: 1;
 }
 
 
 /* Loader */
 
 .loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100svh;
-    overflow: hidden;
-    z-index: 2;
-    
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  overflow: hidden;
+  z-index: 2;
+
 }
 
 .overlay {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
 
 .block {
@@ -72,7 +72,7 @@
   width: 170px;
   display: flex;
   justify-content: end;
-  
+
 }
 
 .word-loader h1 {
@@ -81,11 +81,13 @@
   will-change: transform;
   font-weight: 400;
 }
-.word-loader{
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+.word-loader {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
-.block{
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+.block {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 .divider {
@@ -99,11 +101,12 @@
   background-color: #fff;
 }
 
-#word-1 h1{
-    transform: translateY(-120%);
+#word-1 h1 {
+  transform: translateY(-120%);
 }
-#word-2 h1{
-    transform: translateY(120%);
+
+#word-2 h1 {
+  transform: translateY(120%);
 }
 
 .divider {
@@ -128,8 +131,8 @@
 @media(max-width: 600px) {}
 
 @media(max-width: 480px) {
-    .middle-home {
-        top: 30%;
-        font-size: 5vw;
-    }
+  .middle-home {
+    top: 30%;
+    font-size: 5vw;
+  }
 }

@@ -12,6 +12,9 @@
     z-index: 2;
 
 }
+.navbar .char{
+    will-change: transform;
+}
 
 .list-menu {
     display: flex;

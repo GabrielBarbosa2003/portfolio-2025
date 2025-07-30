@@ -71,7 +71,7 @@ export default function Home() {
 
 
     useGSAP(() => {
-        createPreLoader();
+        // createPreLoader();
     }, { dependencies: [showPreloader] });
 
     function createPreLoader() {
@@ -135,7 +135,7 @@ export default function Home() {
 
         <>
 
-            {showPreloader &&
+            {/* {showPreloader &&
                 <div className='loader'>
                     <div className='overlay'>
                         <div className='block'></div>
@@ -157,7 +157,7 @@ export default function Home() {
                     <div className="divider"></div>
 
                 </div>
-            }
+            } */}
 
             <section className='container-home'>
                 <div className='grid-global'>

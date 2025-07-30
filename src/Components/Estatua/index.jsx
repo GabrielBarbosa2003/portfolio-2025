@@ -16,7 +16,7 @@ function CameraRig() {
 export default function Estatua() {
     const suzi = '/3d/estatua-draco.glb'
     const { nodes } = useGLTF(suzi)
-    const matcapTexture = useTexture('/10.png')
+    const matcapTexture = useTexture('/new-10.jpg')
     matcapTexture.flipY = false
     matcapTexture.colorSpace = THREE.SRGBColorSpace
     const { viewport } = useThree()

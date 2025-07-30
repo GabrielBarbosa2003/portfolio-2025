@@ -1,6 +1,6 @@
 import './navbar.css'
 import { gsap } from "gsap";
-import { useEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import SplitType from 'split-type'
 export default function NavBar() {
@@ -12,7 +12,7 @@ export default function NavBar() {
     const creativeText = useRef(null)
     const textSplit = useRef()
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         liRefs.current.forEach((el, i) => {
             const split = new SplitType(el, { types: "chars" })
             charsRefs.current[i] = split.chars
@@ -20,7 +20,7 @@ export default function NavBar() {
 
         let splitTextNav = new SplitType(creativeText.current, { types: "chars" })
         textSplit.current = splitTextNav.chars
-    })
+    },[])
 
     function menuMouseEnter(index) {
 

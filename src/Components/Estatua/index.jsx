@@ -1,7 +1,9 @@
-import { OrbitControls, useGLTF, useTexture } from '@react-three/drei'
-import { useFrame, useThree } from '@react-three/fiber'
+import { MeshTransmissionMaterial, OrbitControls, useGLTF, useTexture } from '@react-three/drei'
+import { useFrame, useLoader, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { easing } from 'maath'
+import { RGBELoader } from 'three-stdlib'
+import { useControls } from 'leva'
 
 function CameraRig() {
   useFrame((state, delta) => {
@@ -20,18 +22,34 @@ export default function Estatua() {
   matcapTexture.flipY = false
   matcapTexture.colorSpace = THREE.SRGBColorSpace
   const { viewport } = useThree()
+  //const texture = useLoader(RGBELoader, 'https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/aerodynamics_workshop_1k.hdr')
+
+  const materialProps = useControls({
+
+    thickness: { value: 0, min: 0, max: 3, step: 0.05 },
+
+    roughness: { value: 0, min: 0, max: 1, step: 0.1 },
+
+    transmission: { value: 1, min: 0, max: 1, step: 0.1 },
+
+    ior: { value: 0.7, min: 0, max: 3, step: 0.1 },
+
+    chromaticAberration: { value: 0, min: 0, max: 1 },
+
+    backside: { value: false },
+  })
 
   const isMobile = window.innerWidth < 550;
   //geometry={nodes.Torus.geometry}
   return (
     <group>
-      <mesh  rotation={[0, 0, 0]} scale={!isMobile ? [0.7, 0.7, 0.7] : [0.3, 0.3, 0.3]}>
-        <torusGeometry args={[2, 0.7, 16, 40]} />
-        <meshMatcapMaterial matcap={matcapTexture}/>
+      <mesh rotation={[0, 0, 0]} scale={!isMobile ? [0.7, 0.7, 0.7] : [0.3, 0.3, 0.3]}>
+        <torusGeometry args={[2, 0.7, 16, 30]} />
+        <MeshTransmissionMaterial {...materialProps} />
       </mesh>
 
-      <perspectiveCamera/>
-      <CameraRig/>
+      <perspectiveCamera />
+      <CameraRig />
       {/* <OrbitControls /> */}
     </group>
   )

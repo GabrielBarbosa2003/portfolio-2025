@@ -14,28 +14,28 @@ function CameraRig() {
   })
 }
 export default function Estatua() {
-    const suzi = '/3d/estatua-nova.glb'
-    const { nodes } = useGLTF(suzi)
-    const matcapTexture = useTexture('/new-10.jpg')
-    matcapTexture.flipY = false
-    matcapTexture.colorSpace = THREE.SRGBColorSpace
-    const { viewport } = useThree()
+  const suzi = '/3d/estatua-ble.glb'
+  const { nodes, scene } = useGLTF(suzi)
+  const matcapTexture = useTexture('/new-10.jpg')
+  matcapTexture.flipY = false
+  matcapTexture.colorSpace = THREE.SRGBColorSpace
+  const { viewport } = useThree()
 
-    
-    const isMobile = window.innerWidth < 550;
-    console.log(isMobile)
 
-    return (
-        <group>
-            <mesh receiveShadow castShadow geometry={nodes.texture_pbr_v128.geometry} 
-            scale={!isMobile ? [6, 4, 5] : [4,3,4] } 
-            rotation={[1.4, 0, 0]} 
-            position={!isMobile ? [0, -0.5, 1.8] : [0, -0.9, 1.8]}>
-                <meshMatcapMaterial matcap={matcapTexture} />
-            </mesh>
-            <perspectiveCamera />
-            <CameraRig/>
-            {/* <OrbitControls /> */}
-        </group>
-    )
+  const isMobile = window.innerWidth < 550;
+  console.log(nodes)
+
+  return (
+    <group>
+      <primitive
+        object={scene}
+        scale={!isMobile ? [2, 2, 2] : [1, 1, 1]}
+        rotation={[1.4, 0, 0]}
+        position={!isMobile ? [0, -0.5, 1.8] : [0, -0.9, 1.8]}
+      />
+
+      <perspectiveCamera />
+      <OrbitControls />
+    </group>
+  )
 }

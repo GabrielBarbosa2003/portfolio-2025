@@ -7,7 +7,7 @@ export default function Scene() {
 
     return (
 
-        <Canvas>
+        <Canvas dpr={[1, 1.5]} gl={{ antialias: false }}>
             <Estatua/>
             <ambientLight color={0xffffff} intensity={5}/>
              {/* <directionalLight intensity={2} position={[0, 2, 3]}/> */}

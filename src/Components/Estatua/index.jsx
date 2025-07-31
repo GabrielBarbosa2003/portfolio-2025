@@ -3,7 +3,7 @@ import { useFrame, useLoader, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { easing } from 'maath'
 import { RGBELoader } from 'three-stdlib'
-import { useControls } from 'leva'
+import { useControls, Leva } from 'leva'
 
 function CameraRig() {
   useFrame((state, delta) => {
@@ -24,32 +24,42 @@ export default function Estatua() {
   const { viewport } = useThree()
   //const texture = useLoader(RGBELoader, 'https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/aerodynamics_workshop_1k.hdr')
 
-  const materialProps = useControls({
+  // const materialProps = useControls({
 
-    thickness: { value: 0, min: 0, max: 3, step: 0.05 },
+  //   thickness: { value: 0, min: 0, max: 3, step: 0.05 },
 
-    roughness: { value: 0, min: 0, max: 1, step: 0.1 },
+  //   roughness: { value: 0, min: 0, max: 1, step: 0.1 },
 
-    transmission: { value: 1, min: 0, max: 1, step: 0.1 },
+  //   transmission: { value: 1, min: 0, max: 1, step: 0.1 },
 
-    ior: { value: 0.7, min: 0, max: 3, step: 0.1 },
+  //   ior: { value: 0.7, min: 0, max: 3, step: 0.1 },
 
-    chromaticAberration: { value: 0, min: 0, max: 1 },
+  //   chromaticAberration: { value: 0, min: 0, max: 1 },
 
-    backside: { value: false },
-  })
+  //   backside: { value: false },
+
+   
+
+  // },{show: false})
 
   const isMobile = window.innerWidth < 550;
   //geometry={nodes.Torus.geometry}
   return (
     <group>
       <mesh rotation={[0, 0, 0]} scale={!isMobile ? [0.7, 0.7, 0.7] : [0.3, 0.3, 0.3]}>
-        <torusGeometry args={[2, 0.7, 16, 30]} />
-        <MeshTransmissionMaterial {...materialProps} />
+        <torusGeometry args={[2, 0.7, 8, 20]} />
+        <MeshTransmissionMaterial
+        thickness={0}
+        roughness={0}
+        transmission={1}
+        ior={0.7}
+        chromaticAberration={0}
+        backside={false}
+         />
       </mesh>
 
       <perspectiveCamera />
-      <CameraRig />
+      {!isMobile ? <CameraRig /> : <></>}
       {/* <OrbitControls /> */}
     </group>
   )

@@ -5,8 +5,8 @@ import { easing } from 'maath'
 
 function CameraRig() {
   useFrame((state, delta) => {
-    const rangeX = 0.3
-    const rangeY = 0.2
+    const rangeX = 1
+    const rangeY = 1
     const targetX = state.pointer.x * rangeX
     const targetY = -state.pointer.y * rangeY
     easing.damp3(state.camera.position, [targetX, targetY, 5], 0.3, delta)
@@ -16,20 +16,21 @@ function CameraRig() {
 export default function Estatua() {
   const suzi = '/torus.glb'
   const { nodes } = useGLTF(suzi)
-  const matcapTexture = useTexture('/new-10.jpg')
+  const matcapTexture = useTexture('/2.png')
   matcapTexture.flipY = false
   matcapTexture.colorSpace = THREE.SRGBColorSpace
   const { viewport } = useThree()
 
   const isMobile = window.innerWidth < 550;
-
   return (
     <group>
-      <mesh geometry={nodes.Torus.geometry} rotation={[1.6, 0, 0]}>
+      <mesh geometry={nodes.Torus.geometry} rotation={[1.6, 0, 0]} scale={[1.5,1.5,1.5]}>
+        
         <meshMatcapMaterial matcap={matcapTexture}/>
       </mesh>
 
-      <perspectiveCamera />
+      <perspectiveCamera/>
+      <CameraRig/>
       {/* <OrbitControls /> */}
     </group>
   )

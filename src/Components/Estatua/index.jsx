@@ -14,25 +14,20 @@ function CameraRig() {
   })
 }
 export default function Estatua() {
-  const suzi = '/3d/estatua-ble.glb'
-  const { nodes, scene } = useGLTF(suzi)
+  const suzi = '/torus.glb'
+  const { nodes } = useGLTF(suzi)
   const matcapTexture = useTexture('/new-10.jpg')
   matcapTexture.flipY = false
   matcapTexture.colorSpace = THREE.SRGBColorSpace
   const { viewport } = useThree()
 
-
   const isMobile = window.innerWidth < 550;
-  console.log(nodes)
 
   return (
     <group>
-      <primitive
-        object={scene}
-        scale={!isMobile ? [2, 2, 2] : [1, 1, 1]}
-        rotation={[1.4, 0, 0]}
-        position={!isMobile ? [0, -0.5, 1.8] : [0, -0.9, 1.8]}
-      />
+      <mesh geometry={nodes.Torus.geometry} rotation={[1.6, 0, 0]}>
+        <meshMatcapMaterial matcap={matcapTexture}/>
+      </mesh>
 
       <perspectiveCamera />
       {/* <OrbitControls /> */}

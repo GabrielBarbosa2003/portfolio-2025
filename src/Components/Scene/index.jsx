@@ -8,7 +8,7 @@ export default function Scene() {
 
         <Canvas>
             <Estatua/>
-            <ambientLight color={0xffffff} intensity={1}/>
+            <ambientLight color={0xffffff} intensity={2}/>
         </Canvas>
     )
 }

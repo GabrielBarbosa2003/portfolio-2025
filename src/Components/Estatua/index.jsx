@@ -16,16 +16,17 @@ function CameraRig() {
 export default function Estatua() {
   const suzi = '/torus.glb'
   const { nodes } = useGLTF(suzi)
-  const matcapTexture = useTexture('/2.png')
+  const matcapTexture = useTexture('/new-10.jpg')
   matcapTexture.flipY = false
   matcapTexture.colorSpace = THREE.SRGBColorSpace
   const { viewport } = useThree()
 
   const isMobile = window.innerWidth < 550;
+  //geometry={nodes.Torus.geometry}
   return (
     <group>
-      <mesh geometry={nodes.Torus.geometry} rotation={[1.6, 0, 0]} scale={[1.5,1.5,1.5]}>
-        
+      <mesh  rotation={[0, 0, 0]} scale={!isMobile ? [0.7, 0.7, 0.7] : [0.3, 0.3, 0.3]}>
+        <torusGeometry args={[2, 0.7, 16, 40]} />
         <meshMatcapMaterial matcap={matcapTexture}/>
       </mesh>
 

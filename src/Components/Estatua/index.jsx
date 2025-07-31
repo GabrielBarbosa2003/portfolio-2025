@@ -18,29 +18,11 @@ function CameraRig() {
 export default function Estatua() {
   const suzi = '/torus-2.glb'
   const { nodes } = useGLTF(suzi)
-  const matcapTexture = useTexture('/new-10.jpg')
+  const matcapTexture = useTexture('/1.png')
   matcapTexture.flipY = false
   matcapTexture.colorSpace = THREE.SRGBColorSpace
   const { viewport } = useThree()
   //const texture = useLoader(RGBELoader, 'https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/aerodynamics_workshop_1k.hdr')
-
-  // const materialProps = useControls({
-
-  //   thickness: { value: 0, min: 0, max: 3, step: 0.05 },
-
-  //   roughness: { value: 0, min: 0, max: 1, step: 0.1 },
-
-  //   transmission: { value: 1, min: 0, max: 1, step: 0.1 },
-
-  //   ior: { value: 0.7, min: 0, max: 3, step: 0.1 },
-
-  //   chromaticAberration: { value: 0, min: 0, max: 1 },
-
-  //   backside: { value: false },
-
-   
-
-  // },{show: false})
 
   const isMobile = window.innerWidth < 550;
   //geometry={nodes.Torus.geometry}
@@ -48,14 +30,19 @@ export default function Estatua() {
     <group>
       <mesh geometry={nodes.Torus.geometry} rotation={[1.6, 0, 0]} scale={!isMobile ? [0.7, 0.7, 0.7] : [0.3, 0.3, 0.3]}>
         {/* <torusGeometry args={[2, 0.7, 8, 20]} /> */}
-        <MeshTransmissionMaterial
+        {!isMobile ? 
+         <MeshTransmissionMaterial
         thickness={0}
         roughness={0}
         transmission={1}
         ior={0.7}
         chromaticAberration={0}
         backside={false}
-         />
+         /> :
+         <meshMatcapMaterial matcap={matcapTexture}/>
+        }
+       
+         
       </mesh>
 
       <perspectiveCamera />

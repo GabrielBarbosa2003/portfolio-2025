@@ -16,7 +16,7 @@ function CameraRig() {
   })
 }
 export default function Estatua() {
-  const suzi = '/torus.glb'
+  const suzi = '/torus-2.glb'
   const { nodes } = useGLTF(suzi)
   const matcapTexture = useTexture('/new-10.jpg')
   matcapTexture.flipY = false
@@ -46,8 +46,8 @@ export default function Estatua() {
   //geometry={nodes.Torus.geometry}
   return (
     <group>
-      <mesh rotation={[0, 0, 0]} scale={!isMobile ? [0.7, 0.7, 0.7] : [0.3, 0.3, 0.3]}>
-        <torusGeometry args={[2, 0.7, 8, 20]} />
+      <mesh geometry={nodes.Torus.geometry} rotation={[1.6, 0, 0]} scale={!isMobile ? [0.7, 0.7, 0.7] : [0.3, 0.3, 0.3]}>
+        {/* <torusGeometry args={[2, 0.7, 8, 20]} /> */}
         <MeshTransmissionMaterial
         thickness={0}
         roughness={0}

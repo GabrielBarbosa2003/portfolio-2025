@@ -15,7 +15,6 @@ let isInitialLoad = true;
 export default function Home() {
     gsap.registerPlugin(useGSAP)
     const creativeText = useRef()
-    const textRef = useRef()
     const [showPreloader, setShowPreloader] = useState(() => {
         const navigationEntries = performance.getEntriesByType("navigation");
         const isReload = navigationEntries.length > 0 && navigationEntries[0].type === "reload";
@@ -54,7 +53,7 @@ export default function Home() {
         const interval = setInterval(() => {
             animateTitleHome();
         }, 5000);
-        animateText(textRef)
+        animateText()
 
         return () => clearInterval(interval);
 
@@ -165,7 +164,13 @@ export default function Home() {
                         <Scene />
                     </div>
                     <div className='middle-home'>
-                        <h1>Front-end</h1>
+                        <div>
+                            <h1 ref={creativeText}>
+                                Front-end
+                                <br></br>
+                                Creative
+                            </h1>
+                        </div>
                         <h1>Developer</h1>
                     </div>
 

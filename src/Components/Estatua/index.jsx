@@ -7,8 +7,8 @@ import { useControls, Leva } from 'leva'
 
 function CameraRig() {
   useFrame((state, delta) => {
-    const rangeX = 1
-    const rangeY = 1
+    const rangeX = 1.5
+    const rangeY = 1.5
     const targetX = state.pointer.x * rangeX
     const targetY = -state.pointer.y * rangeY
     easing.damp3(state.camera.position, [targetX, targetY, 5], 0.3, delta)
@@ -28,7 +28,7 @@ export default function Estatua() {
   //geometry={nodes.Torus.geometry}
   return (
     <group>
-      <mesh geometry={nodes.Torus.geometry} rotation={[1.6, 0, 0]} scale={!isMobile ? [0.7, 0.7, 0.7] : [0.3, 0.3, 0.3]}>
+      <mesh geometry={nodes.Torus.geometry} rotation={[1.6, 0, 0]} scale={!isMobile ? [0.8, 0.8, 0.8] : [0.4, 0.4, 0.4]}>
         {/* <torusGeometry args={[2, 0.7, 8, 20]} /> */}
         {!isMobile ? 
          <MeshTransmissionMaterial

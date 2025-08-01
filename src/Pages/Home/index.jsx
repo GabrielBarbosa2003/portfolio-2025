@@ -165,8 +165,15 @@ export default function Home() {
                         <Scene />
                     </div>
                     <div className='middle-home'>
-                        <p>Front-end</p>
-                        <p>Developer</p>
+                        <h1>Front-end</h1>
+                        <h1>Developer</h1>
+                    </div>
+
+                    <div className='text-home'>
+                        <h2>I create modern websites that reflect your brand,<br></br>
+                            engage your audience, and turn ideas into <br></br>
+                            memorable digital experiences.</h2>
+                        <p>[Scroll to explore]</p>
                     </div>
 
 

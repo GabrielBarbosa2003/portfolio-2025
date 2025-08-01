@@ -4,7 +4,13 @@
   position: relative;
 }
 
-.middle-home {
+.container-home .grid-global {
+  display: flex;
+  justify-content: start;
+  align-items: end;
+}
+
+.middle-home{
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -13,7 +19,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 3vw;
+}
+.middle-home h1{
+   font-size: 4vw;
+   font-weight: 400;
 }
 
 
@@ -25,6 +34,27 @@
   height: 100%;
   will-change: transform;
   z-index: 1;
+}
+
+.text-home {
+  margin-bottom: 1.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+}
+
+.text-home h2,
+.text-home p {
+  font-style: normal;
+  font-weight: 300;
+
+}
+.text-home h2{
+   font-size: 1.25rem;
+}
+.text-home p{
+  font-size: 1rem;
 }
 
 
@@ -119,7 +149,17 @@
 
 @media(max-width: 1366px) {}
 
-@media(max-width: 1280px) {}
+@media(max-width: 1280px) {
+  .text-home{
+    margin-bottom: 20px;
+  }
+  .text-home h2{
+   font-size: 18px;
+}
+.text-home p{
+  font-size: 16px;
+}
+}
 
 @media(max-width: 1200px) {}
 

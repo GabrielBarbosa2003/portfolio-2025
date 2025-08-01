@@ -170,7 +170,7 @@ export default function Home() {
                     </div>
 
                     <div className='text-home'>
-                        <h2>I create modern websites that reflect your brand,<br className='br-mobile'></br>
+                        <h2>I create modern websites that reflect your brand, <br className='br-mobile'></br>
                             engage your audience, and turn ideas into <br className='br-mobile'></br>
                             memorable digital experiences.</h2>
                         <p>[Scroll to explore]</p>

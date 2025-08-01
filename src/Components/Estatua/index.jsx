@@ -28,7 +28,7 @@ export default function Estatua() {
   //geometry={nodes.Torus.geometry}
   return (
     <group>
-      <mesh geometry={nodes.Torus.geometry} rotation={[1.6, 0, 0]} scale={!isMobile ? [0.8, 0.8, 0.8] : [0.4, 0.4, 0.4]}>
+      <mesh geometry={nodes.Torus.geometry} rotation={!isMobile ? [1.6, 0, 0] : [1.4, 0, 0]} scale={!isMobile ? [0.8, 0.8, 0.8] : [0.4, 0.4, 0.4]}>
         {/* <torusGeometry args={[2, 0.7, 8, 20]} /> */}
         {!isMobile ? 
          <MeshTransmissionMaterial
@@ -46,7 +46,7 @@ export default function Estatua() {
       </mesh>
 
       <perspectiveCamera />
-      {!isMobile ? <CameraRig /> : <></>}
+      <CameraRig />
       {/* <OrbitControls /> */}
     </group>
   )

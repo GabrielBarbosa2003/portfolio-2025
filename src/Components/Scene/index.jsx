@@ -3,7 +3,7 @@ import Estatua from '../Estatua'
 import { Environment } from '@react-three/drei'
 
 export default function Scene() {
-    const isMobile = window.innerWidth < 550;
+    const isMobile = window.innerWidth < 800;
 
     return (
 

@@ -14,7 +14,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 0px 1.875rem;
+  padding: 0px 0.9375rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -48,6 +48,8 @@
 .text-home p {
   font-style: normal;
   font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
 }
 .text-home h2{
@@ -170,8 +172,19 @@
 @media(max-width: 600px) {}
 
 @media(max-width: 480px) {
-  .middle-home {
+  .middle-home{
     top: 30%;
+  }
+  .middle-home h1{
     font-size: 5vw;
+  }
+  .br-mobile{
+    display: none;
+  }
+  .text-home h2{
+    font-size: 16px;
+  }
+   .text-home p{
+    font-size: 12px;
   }
 }

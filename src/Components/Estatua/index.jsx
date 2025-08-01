@@ -24,7 +24,7 @@ export default function Estatua() {
   const { viewport } = useThree()
   //const texture = useLoader(RGBELoader, 'https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/aerodynamics_workshop_1k.hdr')
 
-  const isMobile = window.innerWidth < 550;
+  const isMobile = window.innerWidth < 801;
   //geometry={nodes.Torus.geometry}
   return (
     <group>

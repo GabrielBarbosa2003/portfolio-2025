@@ -5,10 +5,12 @@ import { easing } from 'maath'
 import { RGBELoader } from 'three-stdlib'
 import { useControls, Leva } from 'leva'
 
+const isMobile = window.innerWidth < 801;
+
 function CameraRig() {
   useFrame((state, delta) => {
-    const rangeX = 1.5
-    const rangeY = 1.5
+    const rangeX = !isMobile ? 1.5 : 3
+    const rangeY = !isMobile ? 1.5 : 3
     const targetX = state.pointer.x * rangeX
     const targetY = -state.pointer.y * rangeY
     easing.damp3(state.camera.position, [targetX, targetY, 5], 0.3, delta)
@@ -23,8 +25,7 @@ export default function Estatua() {
   matcapTexture.colorSpace = THREE.SRGBColorSpace
   const { viewport } = useThree()
   //const texture = useLoader(RGBELoader, 'https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/aerodynamics_workshop_1k.hdr')
-
-  const isMobile = window.innerWidth < 801;
+  
   //geometry={nodes.Torus.geometry}
   return (
     <group>

@@ -2,7 +2,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import './icanhelp.css'
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 
 export default function ICanHelp() {
     gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -18,7 +18,7 @@ export default function ICanHelp() {
 
 
 
-    useGSAP(() => {
+    useLayoutEffect(() => {
 
         listRef.current.forEach((sec) => {
             ScrollTrigger.create({
@@ -31,6 +31,7 @@ export default function ICanHelp() {
                 onEnterBack: () => sec.classList.add("active"),
                 onLeaveBack: () => sec.classList.remove("active"),
                 invalidateOnRefresh: true,
+                markers: false
             })
         })
 
@@ -50,15 +51,15 @@ export default function ICanHelp() {
 
     }, [])
 
-    useEffect(() => {
-        window.addEventListener('resize', ScrollTrigger.refresh);
-        window.addEventListener('load', ScrollTrigger.refresh);
+    // useEffect(() => {
+    //     window.addEventListener('resize', ScrollTrigger.refresh);
+    //     window.addEventListener('load', ScrollTrigger.refresh);
 
-        return () => {
-            window.removeEventListener('resize', ScrollTrigger.refresh);
-            window.removeEventListener('load', ScrollTrigger.refresh);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener('resize', ScrollTrigger.refresh);
+    //         window.removeEventListener('load', ScrollTrigger.refresh);
+    //     };
+    // }, []);
 
     return (
         <section className='icanhelp-section'>

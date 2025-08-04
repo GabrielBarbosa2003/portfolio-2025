@@ -66,11 +66,19 @@ export default function NavBar() {
     }
 
     useGSAP(() => {
-        tl.current = gsap.timeline({paused: true})
-        .to(".menu-overlay",{
-            clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)"
-        })
-    },[])
+        tl.current = gsap.timeline({ paused: true })
+            .to(".menu-overlay", {
+                clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)",
+                ease: "power4.inOut",
+                duration: 1,
+            },0).fromTo(charsRefs.current,{
+                yPercent: 100
+            },{
+                yPercent: 0,
+                stagger: 0.01
+            })
+    })
+
 
 
     useEffect(() => {
@@ -130,15 +138,18 @@ export default function NavBar() {
 
                                     <div className='links-mobile'>
                                         <ul>
-                                            <li>
-                                                Work
-                                            </li>
-                                            <li>
-                                                About
-                                            </li>
-                                            <li>
-                                                Contact
-                                            </li>
+                                            {menuItens.map((item, index) => (
+                                                <li
+                                                    key={index}
+                                                    ref={(el) => (liRefs.current[index] = el)}
+                                                    onClick={createMenuMobile}
+                                                >
+                                                    <a href={item.link}>
+                                                        {item.text}
+                                                    </a>
+
+                                                </li>
+                                            ))}
                                         </ul>
                                     </div>
                                     <div className='social-mobile-menu'>

@@ -66,6 +66,11 @@
     list-style: none;
     font-size: 36px;
     padding-top: 20px;
+    height: 80px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.links-mobile a{
+    color: white;
 }
 
 .social-mobile-menu{

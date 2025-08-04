@@ -1,16 +1,21 @@
+import { useGSAP } from '@gsap/react';
 import './navbar.css'
 import { gsap } from "gsap";
-import { useEffect, useLayoutEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SplitType from 'split-type'
 export default function NavBar() {
+    gsap.registerPlugin(useGSAP);
 
-    const menuItens = [{text: "Work", link: "#works"}, {text: "About", link: "/about"}, {text: "Contact", link:"#contact"}] 
+    const menuItens = [{ text: "Work", link: "#works" }, { text: "About", link: "/about" }, { text: "Contact", link: "#contact" }]
     const liRefs = useRef([])
     const charsRefs = useRef([])
 
     const creativeText = useRef(null)
     const textSplit = useRef()
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const tl = useRef();
 
     useLayoutEffect(() => {
         liRefs.current.forEach((el, i) => {
@@ -20,7 +25,7 @@ export default function NavBar() {
 
         let splitTextNav = new SplitType(creativeText.current, { types: "chars" })
         textSplit.current = splitTextNav.chars
-    },[])
+    }, [])
 
     function menuMouseEnter(index) {
 
@@ -55,6 +60,26 @@ export default function NavBar() {
             stagger: 0.005
         })
     }
+
+    function createMenuMobile() {
+        setIsMenuOpen(!isMenuOpen)
+    }
+
+    useGSAP(() => {
+        tl.current = gsap.timeline({paused: true})
+        .to(".menu-overlay",{
+            clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)"
+        })
+    },[])
+
+
+    useEffect(() => {
+        if (isMenuOpen) {
+            tl.current.play();
+        } else {
+            tl.current.reverse();
+        }
+    }, [isMenuOpen])
 
 
     return (
@@ -94,7 +119,39 @@ export default function NavBar() {
                             ))}
                         </ul>
                     ) : (
-                        <p>Menu</p>
+                        <>
+                            <p onClick={createMenuMobile}>Menu</p>
+                            <div className='menu-overlay'>
+                                <div className='grid-global'>
+                                    <div className='navbar'>
+                                        <p>@Gabriel Barbosa</p>
+                                        <p onClick={createMenuMobile}>Menu</p>
+                                    </div>
+
+                                    <div className='links-mobile'>
+                                        <ul>
+                                            <li>
+                                                Work
+                                            </li>
+                                            <li>
+                                                About
+                                            </li>
+                                            <li>
+                                                Contact
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div className='social-mobile-menu'>
+                                        <p>Linkedln</p>
+                                        <p>GitHub</p>
+                                        <p>Instagram</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </>
+
+
                     )}
 
                 </div>

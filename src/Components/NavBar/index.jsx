@@ -81,7 +81,7 @@ export default function NavBar() {
                     yPercent: 0,
                     stagger: 0.01
                 })
-        } 
+        }
     })
 
 
@@ -139,24 +139,31 @@ export default function NavBar() {
                             <div className='menu-overlay'>
                                 <div className='grid-global'>
                                     <div className='navbar'>
-                                        <p>@Gabriel Barbosa</p>
-                                        <p onClick={createMenuMobile}>Menu</p>
+                                        <Link to={"/"} onClick={createMenuMobile}><p>@Gabriel Barbosa</p></Link>
+                                        <p onClick={createMenuMobile}>Close</p>
                                     </div>
 
                                     <div className='links-mobile'>
                                         <ul>
-                                            {menuItens.map((item, index) => (
-                                                <li
-                                                    key={index}
-                                                    ref={(el) => (liRefs.current[index] = el)}
-                                                    onClick={createMenuMobile}
-                                                >
-                                                    <a href={item.link}>
-                                                        {item.text}
-                                                    </a>
 
-                                                </li>
-                                            ))}
+                                            <li onClick={createMenuMobile}>
+                                                <a href={"#works"} >
+                                                    Work
+                                                </a>
+
+                                            </li>
+                                            <li onClick={createMenuMobile}>
+                                                <Link to={"/about"} >
+                                                    About
+                                                </Link>
+                                            </li>
+                                            <li onClick={createMenuMobile}>
+                                                <a href={"#contact"} >
+                                                    Contact
+                                                </a>
+
+                                            </li>
+
                                         </ul>
                                     </div>
                                     <div className='social-mobile-menu'>

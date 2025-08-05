@@ -15,6 +15,9 @@
 .navbar .char{
     will-change: transform;
 }
+.menu-overlay .navbar a{
+    color: white;
+}
 
 .list-menu {
     display: flex;

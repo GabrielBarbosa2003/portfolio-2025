@@ -17,6 +17,9 @@ export default function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const tl = useRef();
 
+    const isMobile = window.innerWidth <= 480
+    console.log(isMobile)
+
     useLayoutEffect(() => {
         liRefs.current.forEach((el, i) => {
             const split = new SplitType(el, { types: "chars" })
@@ -66,28 +69,32 @@ export default function NavBar() {
     }
 
     useGSAP(() => {
-        tl.current = gsap.timeline({ paused: true })
-            .to(".menu-overlay", {
-                clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)",
-                ease: "power4.inOut",
-                duration: 1,
-            },0).fromTo(charsRefs.current,{
-                yPercent: 100
-            },{
-                yPercent: 0,
-                stagger: 0.01
-            })
+        if (isMobile) {
+            tl.current = gsap.timeline({ paused: true })
+                .to(".menu-overlay", {
+                    clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)",
+                    ease: "power4.inOut",
+                    duration: 1,
+                }, 0).fromTo(charsRefs.current, {
+                    yPercent: 100
+                }, {
+                    yPercent: 0,
+                    stagger: 0.01
+                })
+        } 
     })
 
 
 
     useEffect(() => {
+        if (!isMobile || !tl.current) return;
+
         if (isMenuOpen) {
             tl.current.play();
         } else {
             tl.current.reverse();
         }
-    }, [isMenuOpen])
+    }, [isMenuOpen, isMobile]);
 
 
     return (

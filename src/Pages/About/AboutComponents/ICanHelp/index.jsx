@@ -51,15 +51,15 @@ export default function ICanHelp() {
 
     }, [])
 
-    // useEffect(() => {
-    //     window.addEventListener('resize', ScrollTrigger.refresh);
-    //     window.addEventListener('load', ScrollTrigger.refresh);
+    useEffect(() => {
+        window.addEventListener('resize', ScrollTrigger.refresh);
+        window.addEventListener('load', ScrollTrigger.refresh);
 
-    //     return () => {
-    //         window.removeEventListener('resize', ScrollTrigger.refresh);
-    //         window.removeEventListener('load', ScrollTrigger.refresh);
-    //     };
-    // }, []);
+        return () => {
+            window.removeEventListener('resize', ScrollTrigger.refresh);
+            window.removeEventListener('load', ScrollTrigger.refresh);
+        };
+    }, []);
 
     return (
         <section className='icanhelp-section'>

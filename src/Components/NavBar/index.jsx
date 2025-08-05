@@ -110,8 +110,8 @@ export default function NavBar() {
                                     </div>
 
                                     <div className='container-li'>
-                                        <li onClick={createMenuMobile}>
-                                            <Link to={"/about"} >
+                                        <li >
+                                            <Link to={"/about"} onClick={createMenuMobile} >
                                                 About
                                             </Link>
                                         </li>

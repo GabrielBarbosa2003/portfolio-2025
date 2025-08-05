@@ -7,6 +7,7 @@ import { useEffect, useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import animateText from '../../../../services/animeTexts'
 import { gsap } from "gsap";
+import { Link } from 'react-router-dom'
 
 
 
@@ -66,46 +67,48 @@ export default function Footer() {
                         <div className='grid-mobile-footer'>
                             <div className='social-bottom'>
                                 <ul>
-                                   <a href='https://www.instagram.com/gabriellbarbosa/' target='_blank'>
-                                     <li>
-                                        Instagram
-                                        <img src={arrowSocial} alt='arrow' />
+                                    <a href='https://www.instagram.com/gabriellbarbosa/' target='_blank'>
+                                        <li>
+                                            Instagram
+                                            <img src={arrowSocial} alt='arrow' />
 
-                                    </li>
-                                   </a>
-                                   <a href='https://www.linkedin.com/in/devgabrielbarbosa/' target='_blank'> 
-                                     <li>
-                                        LinkedIn
-                                        <img src={arrowSocial} alt='arrow' />
-                                    </li>
-                                   </a>
-                                   <a href='https://github.com/GabrielBarbosa2003' target='_blank'>
-                                     <li>
-                                        Github
-                                        <img src={arrowSocial} alt='arrow' />
+                                        </li>
+                                    </a>
+                                    <a href='https://www.linkedin.com/in/devgabrielbarbosa/' target='_blank'>
+                                        <li>
+                                            LinkedIn
+                                            <img src={arrowSocial} alt='arrow' />
+                                        </li>
+                                    </a>
+                                    <a href='https://github.com/GabrielBarbosa2003' target='_blank'>
+                                        <li>
+                                            Github
+                                            <img src={arrowSocial} alt='arrow' />
 
-                                    </li>
-                                   </a>
+                                        </li>
+                                    </a>
                                 </ul>
 
                             </div>
 
                             <div className='social-bottom'>
                                 <ul>
-                                  <a href='#works'>
-                                      <li>
-                                        Work
-                                        <img src={arrowSocial} alt='arrow' />
-
-                                    </li>
-                                  </a>
-                                    <a href='/about'>
+                                    <a href='#works'>
                                         <li>
-                                            About
+                                            Work
                                             <img src={arrowSocial} alt='arrow' />
 
                                         </li>
                                     </a>
+
+                                    <li>
+                                        <Link to={"/about"}>
+                                            About
+                                            <img src={arrowSocial} alt='arrow' />
+                                        </Link>
+
+                                    </li>
+
                                     <li>
                                         PlayGround
                                         <img src={arrowSocial} alt='arrow' />
@@ -126,7 +129,7 @@ export default function Footer() {
                 <div className='available' ref={availableRef}>
                     <div className='work-available'>
                         <p>Available for work</p>
-                        <img src={dot} alt='green dot' className='fade-in-out'/>
+                        <img src={dot} alt='green dot' className='fade-in-out' />
                     </div>
                     <p>Freelance, Full-time</p>
                 </div>

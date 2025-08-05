@@ -83,7 +83,24 @@
     font-size: 42px;
     padding-top: 20px;
     height: 80px;
+    max-width: max-content;
+    will-change: transform;
     
+}
+
+.links-mobile ul li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: white; 
+    transition: width 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.links-mobile ul li:hover::after {
+    width: 100%;
 }
 .container-li{
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -102,6 +119,12 @@
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: space-around;
+}
+.social-mobile-menu a{
+    color: white;
+}
+.cursor{
+    cursor: pointer;
 }
 
 

@@ -91,12 +91,12 @@ export default function NavBar() {
 
                 <div className="navbar-links">
 
-                    <p onClick={createMenuMobile}>Menu</p>
+                    <p className="cursor" onClick={createMenuMobile}>Menu</p>
                     <div className='menu-overlay'>
                         <div className='grid-global'>
                             <div className='navbar-overlay'>
                                 <Link to={"/"} onClick={createMenuMobile}><p>@Gabriel Barbosa</p></Link>
-                                <p onClick={createMenuMobile}>Close</p>
+                                <p onClick={createMenuMobile} className="cursor">Close</p>
                             </div>
 
                             <div className='links-mobile'>
@@ -128,9 +128,15 @@ export default function NavBar() {
                                 </ul>
                             </div>
                             <div className='social-mobile-menu'>
-                                <p>Linkedln</p>
-                                <p>GitHub</p>
-                                <p>Instagram</p>
+                                <a href='https://www.linkedin.com/in/devgabrielbarbosa/' target='_blank'>
+                                    <p>Linkedln</p>
+                                </a>
+                                <a href='https://github.com/GabrielBarbosa2003' target='_blank'>
+                                    <p>GitHub</p>
+                                </a>
+                                <a href='https://www.instagram.com/gabriellbarbosa/' target='_blank'>
+                                    <p>Instagram</p>
+                                </a>
                             </div>
 
                         </div>

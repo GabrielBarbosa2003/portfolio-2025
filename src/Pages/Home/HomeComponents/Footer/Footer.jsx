@@ -3,7 +3,7 @@ import arrowEmail from '../../../../assets/bottom/arrow-email.svg'
 import arrowSocial from '../../../../assets/bottom/arrow-social.svg'
 import dot from '../../../../assets/bottom/dot.png'
 import letsTalk from '../../../../assets/bottom/lets-talk.svg'
-import { useEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import animateText from '../../../../services/animeTexts'
 import { gsap } from "gsap";
@@ -13,10 +13,16 @@ import { Link } from 'react-router-dom'
 
 
 export default function Footer() {
-    const titleRef = useRef()
-    const contactsRef = useRef()
-    const availableRef = useRef()
-    const localRef = useRef()
+    const titleRef = useRef(null)
+    const contactsRef = useRef(null)
+    const availableRef = useRef(null)
+    const localRef = useRef(null)
+    const socialRef = useRef(null)
+    const projectRef = useRef(null)
+    const workRef = useRef(null)
+    const aboutRef = useRef(null)
+    const playRef = useRef(null)
+
 
     function animateImagesFooter() {
         const images = [...document.querySelectorAll(".footer-home-container img")]
@@ -41,7 +47,7 @@ export default function Footer() {
 
 
     useGSAP(() => {
-        animateText(titleRef, contactsRef, availableRef, localRef)
+        animateText(titleRef, contactsRef, projectRef, availableRef, localRef, socialRef, workRef, aboutRef, playRef)
         animateImagesFooter()
     }, [])
 
@@ -52,10 +58,10 @@ export default function Footer() {
                     <h1>Dont be shy, if you have any project in mind,</h1> <br></br>
                     <span>Get in touch</span>
                 </div>
-                <div className='contacts-bottom' ref={contactsRef}>
-                    <h2>New Projects / Bussines</h2>
-                    <div className='contact-socials' >
-                        <div className='email'>
+                <div className='contacts-bottom'>
+                    <h2 ref={projectRef}>New Projects / Bussines</h2>
+                    <div className='contact-socials'>
+                        <div className='email' ref={contactsRef}>
                             <div className='bottom-email'>
                                 <img src={arrowEmail} alt='arrow' />
                                 <a href='mailto:gabrieldecarvalhu@gmail.com'><p>gabrieldecarvalhu@gmail.com</p></a>
@@ -65,8 +71,8 @@ export default function Footer() {
 
 
                         <div className='grid-mobile-footer'>
-                            <div className='social-bottom'>
-                                <ul>
+                            <div className='social-bottom' >
+                                <ul ref={socialRef}>
                                     <a href='https://www.instagram.com/gabriellbarbosa/' target='_blank'>
                                         <li>
                                             Instagram
@@ -93,29 +99,26 @@ export default function Footer() {
 
                             <div className='social-bottom'>
                                 <ul>
-                                    <a href='#works'>
-                                        <li>
+                                    <li>
+                                        <a href="#works" ref={workRef}>
                                             Work
-                                            <img src={arrowSocial} alt='arrow' />
-
-                                        </li>
-                                    </a>
+                                            <img src={arrowSocial} alt="arrow" />
+                                        </a>
+                                    </li>
 
                                     <li>
-                                        <Link to={"/about"}>
+                                        <Link to={"/about"} ref={aboutRef}>
                                             About
-                                            <img src={arrowSocial} alt='arrow' />
+                                            <img src={arrowSocial} alt="arrow" />
                                         </Link>
-
                                     </li>
 
-                                    <li>
+                                    <li ref={playRef}>
                                         PlayGround
-                                        <img src={arrowSocial} alt='arrow' />
-
+                                        <img src={arrowSocial} alt="arrow" />
                                     </li>
-
                                 </ul>
+
 
                             </div>
                         </div>
@@ -144,6 +147,6 @@ export default function Footer() {
                 </div>
 
             </div>
-        </section>
+        </section >
     )
 }

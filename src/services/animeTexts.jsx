@@ -3,6 +3,8 @@ import { gsap } from "gsap";
 
 export default function animateText(...textRefs) {
     textRefs.forEach(textRef => {
+        //  if (!textRefs?.current) return;
+         
         const text = new SplitType(textRef.current, { types: 'words, chars' })
         const tl = gsap.timeline({
             scrollTrigger: {

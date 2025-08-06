@@ -15,20 +15,7 @@ let isInitialLoad = true;
 export default function Home() {
     gsap.registerPlugin(useGSAP)
     const creativeText = useRef()
-    const [showPreloader, setShowPreloader] = useState(() => {
-        const navigationEntries = performance.getEntriesByType("navigation");
-        const isReload = navigationEntries.length > 0 && navigationEntries[0].type === "reload";
-
-        if (isReload) {
-            sessionStorage.removeItem('preloaderShown');
-        }
-
-        const hasLoaded = sessionStorage.getItem('preloaderShown');
-        return hasLoaded ? false : true;
-    });
-
-
-
+    const [showPreloader, setShowPreloader] = useState(isInitialLoad);
 
 
 
@@ -69,8 +56,15 @@ export default function Home() {
     }, []);
 
 
+    useEffect(() => {
+        return () => {
+            isInitialLoad = false;
+        };
+    }, []);
+
     useGSAP(() => {
         createPreLoader();
+
     }, { dependencies: [showPreloader] });
 
     function createPreLoader() {

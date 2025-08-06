@@ -9,6 +9,11 @@ import galaxyVideo from '../../../../assets/projects-videos/galaxy-video.mp4'
 import galleryImg from '../../../../assets/projects-img/gallery-img.png'
 import galleryVideo from '../../../../assets/projects-videos/gallery-video.mp4'
 
+import arrowSocial from '../../../../assets/bottom/arrow-social.svg'
+
+import live from '../../../../assets/live.png'
+import git from '../../../../assets/github.png'
+
 
 
 import arrow from '../../../../assets/icon-arrow.png'
@@ -31,10 +36,10 @@ export default function Projects() {
     const projectRef = useRef([])
 
     const projects = [
-        { id: 1, name: "Cotton Films", year: "2024", backImage: cottonImg, url: cottonVideo, techs: "(React, GSAP, Development)" },
+        { id: 1, name: "Cotton Films", year: "2024", backImage: cottonImg, url: cottonVideo, techs: "(React, GSAP, Development)", link: "https://cotton-films.vercel.app/", git: "https://github.com/GabrielBarbosa2003/Cotton-films"},
         { id: 2, name: "Revelatio Studio", year: "2025", backImage: revelatioImg, url: revelatioVideo, techs: "(React, GSAP, Development)" },
-        { id: 3, name: "Galaxy 3D", year: "2025", backImage: galaxyImg, url: galaxyVideo, techs: "(React, Three.js, Study)" },
-        { id: 4, name: "Gallery 3D", year: "2024", backImage: galleryImg, url: galleryVideo, techs: "(React, Gsap, Study)" }
+        { id: 3, name: "Galaxy 3D", year: "2025", backImage: galaxyImg, url: galaxyVideo, techs: "(React, Three.js, Study)", link: "https://galaxy-points-material.vercel.app/", git: "https://github.com/GabrielBarbosa2003/galaxy-points-material" },
+        { id: 4, name: "Gallery 3D", year: "2024", backImage: galleryImg, url: galleryVideo, techs: "(React, Gsap, Study)", link: "https://gallery-3d-one.vercel.app/", git: "https://github.com/GabrielBarbosa2003/gallery_3D"}
 
     ]
 
@@ -114,7 +119,21 @@ export default function Projects() {
                                         <img src={arrow} alt='arrow' />
                                         <p>{project.name}</p>
                                     </div>
-                                    <p>{project.year}</p>
+                                    <div className='live'>
+                                        <a href={project.link} target='_blank'>
+                                            <img src={live} alt='arrow' />
+                                        </a>
+                                    </div>
+                                    <div className='live'>
+                                        <a href={project.git} target='_blank'>
+                                            <img src={git} alt='arrow' />
+                                        </a>
+                                    </div>
+
+                                    <div>
+                                        <p>{project.year}</p>
+                                    </div>
+
                                 </div>
                                 <img src={project.backImage} alt='image project' />
                                 <div className='video-container-back' ref={el => videoRef.current[index] = el}>

@@ -1,9 +1,7 @@
-import { MeshTransmissionMaterial, OrbitControls, useGLTF, useTexture } from '@react-three/drei'
-import { useFrame, useLoader, useThree } from '@react-three/fiber'
+import { MeshTransmissionMaterial, useGLTF, useTexture } from '@react-three/drei'
+import { useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { easing } from 'maath'
-import { RGBELoader } from 'three-stdlib'
-import { useControls, Leva } from 'leva'
 
 const isMobile = window.innerWidth < 801;
 
@@ -23,14 +21,10 @@ export default function Estatua() {
   const matcapTexture = useTexture('/1.png')
   matcapTexture.flipY = false
   matcapTexture.colorSpace = THREE.SRGBColorSpace
-  const { viewport } = useThree()
-  //const texture = useLoader(RGBELoader, 'https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/aerodynamics_workshop_1k.hdr')
-  
-  //geometry={nodes.Torus.geometry}
+
   return (
     <group>
       <mesh geometry={nodes.Torus.geometry} rotation={!isMobile ? [1.6, 0, 0] : [1.4, 0, 0]} scale={!isMobile ? [0.8, 0.8, 0.8] : [0.4, 0.4, 0.4]}>
-        {/* <torusGeometry args={[2, 0.7, 8, 20]} /> */}
         {!isMobile ? 
          <MeshTransmissionMaterial
         thickness={0}
@@ -48,7 +42,6 @@ export default function Estatua() {
 
       <perspectiveCamera />
       <CameraRig />
-      {/* <OrbitControls /> */}
     </group>
   )
 }

@@ -3,14 +3,14 @@ import me from '../../assets/myself.png'
 import ICanHelp from './AboutComponents/ICanHelp'
 import Experience from './AboutComponents/Experience'
 import Footer from '../Home/HomeComponents/Footer/Footer'
-import { useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import animateText from '../../services/animeTexts'
 import { gsap } from "gsap";
 
 export default function About() {
-    const titleRef = useRef()
-    const aboutMeRef = useRef()
+    const titleRef = useRef(null)
+    const aboutMeRef = useRef(null)
     const imageRef = useRef()
 
     function animateImageAbout() {

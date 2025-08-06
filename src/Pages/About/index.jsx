@@ -1,12 +1,13 @@
 import './about.css'
-import me from '../../assets/myself.png'
 import ICanHelp from './AboutComponents/ICanHelp'
 import Experience from './AboutComponents/Experience'
 import Footer from '../Home/HomeComponents/Footer/Footer'
-import { useEffect, useLayoutEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import animateText from '../../services/animeTexts'
 import { gsap } from "gsap";
+
+import meport from '../../assets/eu-port.jpeg'
 
 export default function About() {
     const titleRef = useRef(null)
@@ -57,7 +58,7 @@ export default function About() {
 
                     <div className='about-me'>
                         <div className='myself'>
-                            <img src={me} alt='myself' ref={imageRef} />
+                            <img src={meport} alt='myself' ref={imageRef} />
                         </div>
 
                         <div className='text-about-me' ref={aboutMeRef}>

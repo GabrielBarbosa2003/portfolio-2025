@@ -36,6 +36,7 @@
 .myself img {
     width: 100%;
     max-width: 619px;
+    border-radius: 30px;
 }
 
 .about-me {

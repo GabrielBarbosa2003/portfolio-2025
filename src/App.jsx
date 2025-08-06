@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useEffect, useRef } from "react"
 import NavBar from "./Components/NavBar"
 import Home from "./Pages/Home"
 import About from './Pages/About'
@@ -21,9 +21,23 @@ function App() {
     // return () => gsap.ticker.remove(update)
   }, [])
 
+    function ScrollToTop() {
+    const { pathname } = useLocation();
+  
+    useEffect(() => {
+      const timeout = setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "auto" });
+      }, 50);
+  
+      return () => clearTimeout(timeout); 
+    }, [pathname]);
+  
+    return null;
+  }
+
   return (
     <ReactLenis root options={{ autoRaf: false, smoothWheel: true }} ref={lenisRef}>
-
+      <ScrollToTop/>
       <NavBar />
 
       <Routes>

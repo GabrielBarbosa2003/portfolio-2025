@@ -94,7 +94,7 @@
 
 }
 
-.social-bottom li {
+.social-bottom li, .social-bottom li a{
     display: flex !important;
     gap: 8px;
     align-items: center;

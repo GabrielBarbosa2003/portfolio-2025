@@ -51,8 +51,8 @@ export default function Experience() {
 
                     <div className='experience'>
                         <div className='job'>
-                            <h2>Front-end & Criative Developer</h2>
-                            <p>Freelance</p>
+                            <h2>Front-end Developer</h2>
+                            <p>TTMS Technologies</p>
                         </div>
 
                         <div className='time-local'>

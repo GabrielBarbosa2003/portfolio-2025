@@ -134,7 +134,7 @@ export default function Footer() {
                         <p>Available for work</p>
                         <img src={dot} alt='green dot' className='fade-in-out' />
                     </div>
-                    <p>Freelance, Full-time</p>
+                    <p>Freelance</p>
                 </div>
                 <div className='local-rights' ref={localRef}>
                     <p>Brazil-São Paulo</p>
